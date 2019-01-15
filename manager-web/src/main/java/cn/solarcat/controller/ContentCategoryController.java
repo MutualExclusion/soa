@@ -32,16 +32,18 @@ public class ContentCategoryController {
 		SolarCatResult result = contentCategoryService.addContentCategory(parentId, name);
 		return result;
 	}
-//	@RequestMapping("/content/category/update")
-//	@ResponseBody
-//	public SolarCatResult updateContCat(Long id,String name) {
-//		SolarCatResult result = contentCategoryService.updateContentCategory(id, name);
-//		return result;
-//	}
-//	@RequestMapping("/content/category/delete")
-//	@ResponseBody
-//	public SolarCatResult daleteContCat(Long id) {
-//		SolarCatResult result = contentCategoryService.deleteContentCategory(id);
-//		return result;
-//	}
+
+	@RequestMapping("/content/category/update")
+	@ResponseBody
+	public SolarCatResult updateContCat(Long id, String name) {
+		SolarCatResult result = contentCategoryService.updateContentCategory(id, name);
+		return result;
+	}
+
+	@RequestMapping("/content/category/delete")
+	@ResponseBody
+	public SolarCatResult daleteContCat(Long id) {
+		SolarCatResult result = contentCategoryService.deleteContentCategory(id);
+		return result;
+	}
 }

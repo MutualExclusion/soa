@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
+import cn.solarcat.common.pojo.EasyUIDataGridResult;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.content.service.ContentService;
 import cn.solarcat.pojo.TbContent;
@@ -21,5 +22,13 @@ public class ContentController {
 	public SolarCatResult addContent(TbContent tbContent) {
 		SolarCatResult result = contentSevice.addContent(tbContent);
 		return result;
+	}
+
+	@RequestMapping(value = "content/query/list")
+	@ResponseBody
+	public EasyUIDataGridResult getContentByCatId(int categoryId, int page, int rows) {
+		EasyUIDataGridResult result = contentSevice.getContentByCatId(categoryId, page, rows);
+		return result;
+
 	}
 }

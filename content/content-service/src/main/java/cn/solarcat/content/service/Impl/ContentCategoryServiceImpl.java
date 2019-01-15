@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import com.alibaba.dubbo.config.annotation.Service;
 
 import cn.solarcat.common.pojo.EasyUITreeNode;
+import cn.solarcat.common.util.ReturnCode;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.content.service.ContentCategoryService;
 import cn.solarcat.mapper.TbContentCategoryMapper;
@@ -88,4 +89,32 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 		// 返回结果，返回E3Result，包含pojo
 		return SolarCatResult.ok(contentCategory);
 	}
+
+	@Override
+	public SolarCatResult updateContentCategory(Long id, String name) {
+		TbContentCategory contentCategory = contentCategoryMapper.selectByPrimaryKey(id);
+		if (contentCategory != null) {
+			contentCategory.setName(name);
+			contentCategory.setUpdated(new Date());
+		} else {
+			return SolarCatResult.build(ReturnCode.C250);
+		}
+		contentCategory.setName(name);
+		if (contentCategoryMapper.updateByPrimaryKey(contentCategory) == 1) {
+			return SolarCatResult.build(ReturnCode.C200);
+		} else {
+			return SolarCatResult.build(ReturnCode.C300);
+		}
+	}
+
+	@Override
+	public SolarCatResult deleteContentCategory(Long id) {
+		TbContentCategory contentCategory = contentCategoryMapper.selectByPrimaryKey(id);
+		if (contentCategory != null && contentCategoryMapper.deleteByPrimaryKey(id) == 1) {
+			return SolarCatResult.build(ReturnCode.C200);
+		} else {
+			return SolarCatResult.build(ReturnCode.C301);
+		}
+	}
+
 }

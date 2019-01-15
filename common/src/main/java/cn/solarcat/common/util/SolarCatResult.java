@@ -53,10 +53,6 @@ public class SolarCatResult implements Serializable {
 		this.data = data;
 	}
 
-//    public Boolean isOK() {
-//        return this.status == 200;
-//    }
-
 	public Integer getStatus() {
 		return status;
 	}
@@ -79,5 +75,9 @@ public class SolarCatResult implements Serializable {
 
 	public void setData(Object data) {
 		this.data = data;
+	}
+
+	public static SolarCatResult build(ReturnCode code) {
+		return new SolarCatResult(code.getStatus(), code.getMessage(), null);
 	}
 }

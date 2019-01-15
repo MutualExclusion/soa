@@ -10,7 +10,10 @@ import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSONObject;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
+import cn.solarcat.common.pojo.EasyUIDataGridResult;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.content.service.ContentService;
 import cn.solarcat.mapper.TbContentMapper;
@@ -97,4 +100,23 @@ public class ContentServiceImpl implements ContentService {
 		return list;
 	}
 
+	@Override
+	public EasyUIDataGridResult getContentByCatId(int categoryId, int page, int rows) {
+		// 设置分页信息
+		PageHelper.startPage(page, rows);
+		// 执行查询
+		TbContentExample example = new TbContentExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andCategoryIdEqualTo((long) categoryId);
+		List<TbContent> list = contentMapper.selectByExample(example);
+		// 创建一个返回值对象
+		EasyUIDataGridResult result = new EasyUIDataGridResult();
+		result.setRows(list);
+		// 取分页结果
+		PageInfo<TbContent> pageInfo = new PageInfo<>(list);
+		// 取总记录数
+		long total = pageInfo.getTotal();
+		result.setTotal((int) total);
+		return result;
+	}
 }
