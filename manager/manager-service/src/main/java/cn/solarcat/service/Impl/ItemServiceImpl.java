@@ -4,9 +4,18 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import javax.jms.Destination;
+import javax.jms.JMSException;
+import javax.jms.Message;
+import javax.jms.Session;
+import javax.jms.TextMessage;
+
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.jms.core.JmsMessagingTemplate;
+import org.springframework.jms.core.MessageCreator;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Service;
@@ -36,6 +45,11 @@ public class ItemServiceImpl implements ItemService {
 	private RedisTemplate<String, String> redisTemplate;
 	private String REDIS_ITEM_PRE = "ITEM_INFO";
 	private Integer ITEM_CACHE_EXPIRE = 3600;
+	@Qualifier(value = "activeMQTopic")
+	@Autowired
+	private Destination topic;
+	@Autowired
+	private JmsMessagingTemplate jmsMessagingTemplate;
 
 	@Override
 	public TbItem getTbItemById(long itemId) {
@@ -99,8 +113,14 @@ public class ItemServiceImpl implements ItemService {
 		tbItemDesc.setUpdated(new Date());
 		itemDescMapper.insert(tbItemDesc);
 		// 发送一个商品添加消息
-//		Destination topicDestination = (Destination) new ActiveMQTopic("itemAddTopic");
-//		jmsTemplate.send((javax.jms.Destination) topicDestination, new MessageCreator() {
+		jmsMessagingTemplate.convertAndSend(topic, new MessageCreator() {
+			@Override
+			public Message createMessage(Session session) throws JMSException {
+				TextMessage textMessage = session.createTextMessage(Id + "");
+				return textMessage;
+			}
+		});
+//		jmsTemplate.convertAndSend(topic, new MessageCreator() {
 //			@Override
 //			public Message createMessage(Session session) throws JMSException {
 //				TextMessage textMessage = session.createTextMessage(Id + "");
