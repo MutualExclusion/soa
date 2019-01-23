@@ -13,6 +13,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
+import cn.solarcat.common.configuration.ContentConfiguration;
 import cn.solarcat.common.pojo.EasyUIDataGridResult;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.content.service.ContentService;
@@ -42,7 +43,6 @@ public class ContentServiceImpl implements ContentService {
 	@Autowired
 	private TbContentMapper contentMapper;
 
-	private final static String CONTENT_LIST = "CONTENT_LIST";
 	@Autowired
 	private RedisTemplate<String, String> redisTemplate;
 
@@ -54,7 +54,7 @@ public class ContentServiceImpl implements ContentService {
 		// 插入到数据库
 		contentMapper.insert(content);
 		// 缓存同步,删除缓存中对应的数据。
-		redisTemplate.opsForHash().delete(CONTENT_LIST, content.getCategoryId().toString());
+		redisTemplate.opsForHash().delete(ContentConfiguration.CONTENT_LIST, content.getCategoryId().toString());
 		return SolarCatResult.ok();
 	}
 
@@ -75,7 +75,7 @@ public class ContentServiceImpl implements ContentService {
 	public List<TbContent> getContentListByCid(long cid) {
 		try {
 			// 如果缓存中有直接响应结果
-			String json = (String) redisTemplate.opsForHash().get(CONTENT_LIST, cid + "");
+			String json = (String) redisTemplate.opsForHash().get(ContentConfiguration.CONTENT_LIST, cid + "");
 			if (StringUtils.isNotBlank(json)) {
 				// List<TbContent> list =JsonUtils.jsonToList(json, TbContent.class);
 				List<TbContent> list = JSONObject.parseArray(json, TbContent.class);
@@ -92,7 +92,7 @@ public class ContentServiceImpl implements ContentService {
 		// 执行查询
 		List<TbContent> list = contentMapper.selectByExampleWithBLOBs(example);
 		try {
-			redisTemplate.opsForHash().put(CONTENT_LIST, cid + "",
+			redisTemplate.opsForHash().put(ContentConfiguration.CONTENT_LIST, cid + "",
 					/* JsonUtils.objectToJson(list) */JSONObject.toJSONString(list));
 		} catch (Exception e) {
 			e.printStackTrace();
