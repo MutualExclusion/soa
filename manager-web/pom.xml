@@ -15,6 +15,11 @@
 		</dependency>
 		<dependency>
 			<groupId>cn.solarcat</groupId>
+			<artifactId>search-interface</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>cn.solarcat</groupId>
 			<artifactId>manager-interface</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>

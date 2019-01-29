@@ -15,7 +15,7 @@ import cn.solarcat.content.service.ContentCategoryService;
 
 @Controller
 public class ContentCategoryController {
-	@Reference
+	@Reference(timeout = 3000)
 	private ContentCategoryService contentCategoryService;
 
 	@RequestMapping("/content/category/list")

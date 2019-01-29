@@ -68,10 +68,10 @@ public class ItemServiceImpl implements ItemService {
 //				return textMessage;
 //			}
 //		});
-		jmsTemplate.send("ITEM_ADD_TOPIC", new MessageCreator() {
+		jmsTemplate.send("ITEM_ADD_QUEUE", new MessageCreator() {
 			@Override
 			public Message createMessage(Session session) throws JMSException {
-				TextMessage textMessage = session.createTextMessage();
+				TextMessage textMessage = session.createTextMessage(Id + "");
 				return textMessage;
 			}
 		});

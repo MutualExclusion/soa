@@ -19,13 +19,13 @@ import cn.solarcat.service.ItemService;
 
 @Controller
 public class ItemController {
-	@Reference
+	@Reference(timeout = 3000)
 	private ItemService itemService;
-	@Reference
+	@Reference(timeout = 3000)
 	private ItemDescService itemDescService;
-	@Reference
+	@Reference(timeout = 3000)
 	private ItemParamItemService itemParamItemService;
-	@Reference
+	@Reference(timeout = 3000)
 	private ItemParamService itemParamService;
 
 	@RequestMapping("/item/{itemId}")
@@ -113,8 +113,7 @@ public class ItemController {
 
 	@RequestMapping(value = "/item/param/list")
 	@ResponseBody
-	public EasyUIDataGridResult getItemParamList(@PathVariable(name = "page", value = "1") int page,
-			@PathVariable(name = "rows", value = "30") int rows) {
+	public EasyUIDataGridResult getItemParamList(int page, int rows) {
 		EasyUIDataGridResult result = itemParamService.getItemParamList(page, rows);
 		return result;
 
