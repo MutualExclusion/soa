@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 
 import cn.solarcat.common.pojo.LogEntity;
@@ -38,33 +39,30 @@ public class LogRecord {
 		Object[] obj = joinPoint.getArgs();
 		LogEntity logInfo = new LogEntity();
 		logInfo.setAction(log.action());
+		logInfo.setStartTime(startTime);
+		logInfo.setClassName(method.getDeclaringClass().getName());
+		logInfo.setLevel(log.level());
+		logInfo.setMethod(method.getName());
+		logInfo.setParams(JSONArray.toJSONString(obj));
 		try {
 			resultData = joinPoint.proceed(obj);
 			long endTime = System.currentTimeMillis();
 
 			// 组装日志信息
 
-			logInfo.setClassName(method.getDeclaringClass().getName());
-			logInfo.setStartTime(startTime);
 			logInfo.setEndTime(endTime);
 			logInfo.setExpendTime(endTime - startTime);
-			logInfo.setLevel(log.level());
-			logInfo.setMethod(method.getName());
-			logInfo.setObj((Object[]) resultData);
-			logInfo.setParams(obj);
+			logInfo.setObj(resultData.toString());
 
 			logger.info("target:{}", JSONObject.toJSONString(logInfo));
 		} catch (Throwable e) {
 			long endTime = System.currentTimeMillis();
+
 			// 组装日志信息
-			logInfo.setClassName(method.getDeclaringClass().getName());
-			logInfo.setStartTime(startTime);
+
 			logInfo.setEndTime(endTime);
 			logInfo.setExpendTime(endTime - startTime);
-			logInfo.setLevel(log.level());
-			logInfo.setMethod(method.getName());
 			logInfo.setException(e.getMessage());
-			logInfo.setParams(obj);
 			logger.error("target:{}", JSONObject.toJSONString(logInfo));
 		}
 		return resultData;

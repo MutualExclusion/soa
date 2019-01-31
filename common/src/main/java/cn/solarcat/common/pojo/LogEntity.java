@@ -32,29 +32,29 @@ public class LogEntity {
 	/**
 	 * 请求参数
 	 */
-	private Object[] params;
+	private String params;
 	/**
 	 * 返回参数
 	 */
-	private Object[] obj;
+	private Object obj;
 	/**
 	 * 异常信息
 	 */
 	private String exception;
 
-	public Object[] getParams() {
+	public String getParams() {
 		return params;
 	}
 
-	public void setParams(Object[] params) {
+	public void setParams(String params) {
 		this.params = params;
 	}
 
-	public Object[] getObj() {
+	public Object getObj() {
 		return obj;
 	}
 
-	public void setObj(Object[] obj) {
+	public void setObj(Object obj) {
 		this.obj = obj;
 	}
 
@@ -127,7 +127,7 @@ public class LogEntity {
 	}
 
 	public LogEntity(LEVEL level, String className, String method, ACTION action, long startTime, long endTime,
-			long expendTime, Object[] params, Object[] obj, String exception) {
+			long expendTime, String params, Object obj, String exception) {
 		super();
 		this.level = level;
 		ClassName = className;
