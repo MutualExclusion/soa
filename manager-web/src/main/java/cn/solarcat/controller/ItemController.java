@@ -19,9 +19,9 @@ import cn.solarcat.service.ItemService;
 
 @Controller
 public class ItemController {
-	@Reference(timeout = 3000)
+	@Reference(timeout = 30000)
 	private ItemService itemService;
-	@Reference(timeout = 3000)
+	@Reference(timeout = 3000, retries = 0)
 	private ItemDescService itemDescService;
 	@Reference(timeout = 3000)
 	private ItemParamItemService itemParamItemService;

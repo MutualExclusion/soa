@@ -21,6 +21,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.configuration.ActiveMQConfiguration;
+import cn.solarcat.common.configuration.ItemConfiguration;
+import cn.solarcat.common.pojo.ACTION;
 import cn.solarcat.common.pojo.EasyUIDataGridResult;
 import cn.solarcat.common.util.IDUtils;
 import cn.solarcat.common.util.SolarCatResult;
@@ -41,8 +45,6 @@ public class ItemServiceImpl implements ItemService {
 	private TbItemDescMapper itemDescMapper;
 	@Autowired
 	private RedisTemplate<String, String> redisTemplate;
-	private String REDIS_ITEM_PRE = "ITEM_INFO";
-	private Integer ITEM_CACHE_EXPIRE = 3600;
 	@Autowired
 	private JmsTemplate jmsTemplate;
 
@@ -68,7 +70,7 @@ public class ItemServiceImpl implements ItemService {
 //				return textMessage;
 //			}
 //		});
-		jmsTemplate.send("ITEM_ADD_QUEUE", new MessageCreator() {
+		jmsTemplate.send(ActiveMQConfiguration.ITEM_ADD, new MessageCreator() {
 			@Override
 			public Message createMessage(Session session) throws JMSException {
 				TextMessage textMessage = session.createTextMessage(Id + "");
@@ -95,6 +97,7 @@ public class ItemServiceImpl implements ItemService {
 	}
 
 	@Override
+	@Log(action = ACTION.SELECT)
 	public EasyUIDataGridResult getItemList(int page, int rows) {
 		// 设置分页信息
 		PageHelper.startPage(page, rows);
@@ -115,7 +118,7 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public TbItem getTbItemById(long itemId) {
 		try {
-			String json = redisTemplate.opsForValue().get(REDIS_ITEM_PRE + ":" + itemId + ":BASE");
+			String json = redisTemplate.opsForValue().get(ItemConfiguration.REDIS_ITEM_PRE + ":" + itemId + ":BASE");
 			if (StringUtils.isNotBlank(json)) {
 				// TbItem tbItem = JsonUtils.jsonToPojo(json, TbItem.class);
 				TbItem tbItem = JSONObject.parseObject(json, TbItem.class);
@@ -130,9 +133,10 @@ public class ItemServiceImpl implements ItemService {
 		List<TbItem> list = itemMapper.selectByExample(example);
 		if (list != null && list.size() > 0) {
 			try {
-				redisTemplate.opsForValue().set(REDIS_ITEM_PRE + ":" + itemId + ":BASE",
+				redisTemplate.opsForValue().set(ItemConfiguration.REDIS_ITEM_PRE + ":" + itemId + ":BASE",
 						/* JsonUtils.objectToJson(list.get(0)) */JSONObject.toJSONString(list.get(0)));
-				redisTemplate.expire(REDIS_ITEM_PRE + ":" + itemId + ":BASE", ITEM_CACHE_EXPIRE, TimeUnit.MILLISECONDS);
+				redisTemplate.expire(ItemConfiguration.REDIS_ITEM_PRE + ":" + itemId + ":BASE",
+						ItemConfiguration.ITEM_CACHE_EXPIRE, TimeUnit.MILLISECONDS);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -144,7 +148,7 @@ public class ItemServiceImpl implements ItemService {
 	@Override
 	public TbItemDesc getTbItemDescById(long itemId) {
 		try {
-			String json = redisTemplate.opsForValue().get(REDIS_ITEM_PRE + ":" + itemId + ":DESC");
+			String json = redisTemplate.opsForValue().get(ItemConfiguration.REDIS_ITEM_PRE + ":" + itemId + ":DESC");
 			if (StringUtils.isNotBlank(json)) {
 				// TbItemDesc tbItemDesc = JsonUtils.jsonToPojo(json, TbItemDesc.class);
 				TbItemDesc tbItemDesc = JSONObject.parseObject(json, TbItemDesc.class);
@@ -155,9 +159,10 @@ public class ItemServiceImpl implements ItemService {
 		}
 		TbItemDesc tbItemDesc = itemDescMapper.selectByPrimaryKey(itemId);
 		try {
-			redisTemplate.opsForValue().set(REDIS_ITEM_PRE + ":" + itemId + ":DESC",
+			redisTemplate.opsForValue().set(ItemConfiguration.REDIS_ITEM_PRE + ":" + itemId + ":DESC",
 					/* JsonUtils.objectToJson(tbItemDesc) */JSONObject.toJSONString(tbItemDesc));
-			redisTemplate.expire(REDIS_ITEM_PRE + ":" + itemId + ":DESC", ITEM_CACHE_EXPIRE, TimeUnit.MICROSECONDS);
+			redisTemplate.expire(ItemConfiguration.REDIS_ITEM_PRE + ":" + itemId + ":DESC",
+					ItemConfiguration.ITEM_CACHE_EXPIRE, TimeUnit.MICROSECONDS);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

@@ -9,7 +9,10 @@ import org.springframework.stereotype.Component;
 
 import com.alibaba.dubbo.config.annotation.Service;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
 import cn.solarcat.common.pojo.EasyUITreeNode;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.util.ReturnCode;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.content.service.ContentCategoryService;
@@ -40,6 +43,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	private TbContentCategoryMapper contentCategoryMapper;
 
 	@Override
+	@Log(action = ACTION.SELECT, level = LEVEL.SERVICE)
 	public List<EasyUITreeNode> getContentCatList(long parentId) {
 		// 根据parentid查询子节点列表
 		TbContentCategoryExample example = new TbContentCategoryExample();
@@ -62,6 +66,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
+	@Log(action = ACTION.ADD, level = LEVEL.SERVICE)
 	public SolarCatResult addContentCategory(long parentId, String name) {
 		// 创建一个tb_content_category表对应的pojo对象
 		TbContentCategory contentCategory = new TbContentCategory();
@@ -91,6 +96,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
+	@Log(action = ACTION.UPDATE, level = LEVEL.SERVICE)
 	public SolarCatResult updateContentCategory(Long id, String name) {
 		TbContentCategory contentCategory = contentCategoryMapper.selectByPrimaryKey(id);
 		if (contentCategory != null) {
@@ -108,6 +114,7 @@ public class ContentCategoryServiceImpl implements ContentCategoryService {
 	}
 
 	@Override
+	@Log(action = ACTION.DELETE, level = LEVEL.SERVICE)
 	public SolarCatResult deleteContentCategory(Long id) {
 		TbContentCategory contentCategory = contentCategoryMapper.selectByPrimaryKey(id);
 		if (contentCategory != null && contentCategoryMapper.deleteByPrimaryKey(id) == 1) {

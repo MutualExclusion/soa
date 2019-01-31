@@ -1,6 +1,6 @@
 package cn.solarcat.common.pojo;
 
-public enum RETURN {
+public enum STATUS {
 	/**
 	 * 成功
 	 */
@@ -8,5 +8,5 @@ public enum RETURN {
 	/**
 	 * 失败
 	 */
-	FAIL
+	FAIL;
 }

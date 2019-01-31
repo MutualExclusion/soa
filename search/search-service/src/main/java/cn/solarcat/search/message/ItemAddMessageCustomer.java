@@ -9,12 +9,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jms.annotation.JmsListener;
+import org.springframework.stereotype.Component;
 
+import cn.solarcat.common.configuration.ActiveMQConfiguration;
 import cn.solarcat.common.pojo.ACTION;
-import cn.solarcat.common.pojo.RETURN;
+import cn.solarcat.common.pojo.STATUS;
 import cn.solarcat.common.pojo.SearchItem;
 import cn.solarcat.search.mapper.ItemMapper;
 
+@Component
 public class ItemAddMessageCustomer {
 	private static final Logger logger = LoggerFactory.getLogger(ItemAddMessageCustomer.class);
 	@Autowired
@@ -22,7 +25,7 @@ public class ItemAddMessageCustomer {
 	@Autowired
 	private SolrClient solrClient;
 
-	@JmsListener(destination = "ITEM_ADD_QUEUE")
+	@JmsListener(destination = ActiveMQConfiguration.ITEM_ADD)
 	public void onMessage(Message message) {
 		String text;
 		try {
@@ -42,9 +45,9 @@ public class ItemAddMessageCustomer {
 			solrClient.commit();
 
 		} catch (Exception e) {
-			logger.error("[" + RETURN.FAIL + "] :" + ACTION.ActiontoString(ACTION.ADD) + ": {}" + e.toString());
+			logger.error("[" + STATUS.FAIL + "-" + ACTION.ADD + "]" + ": {\t}" + e.toString());
 		}
-		logger.info("[" + RETURN.SUCCESS + "] :" + ACTION.ActiontoString(ACTION.ADD) + ": {}" + message);
+		logger.info("[" + STATUS.SUCCESS + "-" + ACTION.ADD + "]" + ": {\t}" + message);
 	}
 
 }

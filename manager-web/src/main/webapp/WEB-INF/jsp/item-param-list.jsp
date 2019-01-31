@@ -16,15 +16,14 @@
 <div id="itemEditWindow" class="easyui-window" title="编辑商品" data-options="modal:true,closed:true,iconCls:'icon-save',href:'/item-edit'" style="width:80%;height:80%;padding:10px;">
 </div>
 <script>
-
-	function formatItemParamData(value , index){
-		var json = JSON.parse(value);
-		var array = [];
-		$.each(json,function(i,e){
-			array.push(e.group);
-		});
-		return array.join(",");
-	}
+// 	function formatItemParamData(value , index){
+// 		var json = JSON.parse(value);
+// 		var array = [];
+// 		$.each(json,function(i,e){
+// 			array.push(e.group);
+// 		});
+// 		return array.join(",");
+// 	}
 
     function getSelectionsIds(){
     	var itemList = $("#itemParamList");

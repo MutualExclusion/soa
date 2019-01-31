@@ -7,6 +7,7 @@ package cn.solarcat.common.pojo;
  *
  */
 public enum ACTION {
+	NODO,
 	/**
 	 * 添加
 	 */
@@ -14,17 +15,13 @@ public enum ACTION {
 	/**
 	 * 删除
 	 */
-	DELETE;
-
-	public static String ActiontoString(ACTION action) {
-		String str = "";
-		switch (action) {
-		case ADD:
-			str = "添加";
-		case DELETE:
-			str = "删除";
-		}
-		return str;
-	}
-
+	DELETE,
+	/**
+	 * 查询
+	 */
+	SELECT,
+	/**
+	 * 更新
+	 */
+	UPDATE;
 }

@@ -13,8 +13,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
+import cn.solarcat.aop.Log;
 import cn.solarcat.common.configuration.ContentConfiguration;
+import cn.solarcat.common.pojo.ACTION;
 import cn.solarcat.common.pojo.EasyUIDataGridResult;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.content.service.ContentService;
 import cn.solarcat.mapper.TbContentMapper;
@@ -47,6 +50,7 @@ public class ContentServiceImpl implements ContentService {
 	private RedisTemplate<String, String> redisTemplate;
 
 	@Override
+	@Log(action = ACTION.ADD, level = LEVEL.SERVICE)
 	public SolarCatResult addContent(TbContent content) {
 		// 将内容数据插入到内容表
 		content.setCreated(new Date());
@@ -69,9 +73,10 @@ public class ContentServiceImpl implements ContentService {
 	 * 
 	 * @param cid
 	 * @return
-	 * @see cn.e3mall.content.service.ContentService#getContentListByCid(long)
+	 * @see cn.content.service.ContentService#getContentListByCid(long)
 	 */
 	@Override
+	@Log(action = ACTION.SELECT, level = LEVEL.SERVICE)
 	public List<TbContent> getContentListByCid(long cid) {
 		try {
 			// 如果缓存中有直接响应结果
@@ -101,6 +106,7 @@ public class ContentServiceImpl implements ContentService {
 	}
 
 	@Override
+	@Log(action = ACTION.ADD, level = LEVEL.SERVICE)
 	public EasyUIDataGridResult getContentByCatId(int categoryId, int page, int rows) {
 		// 设置分页信息
 		PageHelper.startPage(page, rows);
