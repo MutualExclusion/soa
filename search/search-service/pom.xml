@@ -77,7 +77,7 @@
 				<filtering>false</filtering>
 			</resource>
 			<resource>
-				<directory>src/main/resource</directory>
+				<directory>src/main/resources</directory>
 				<includes>
 					<include>**/*.properties</include>
 				</includes>
