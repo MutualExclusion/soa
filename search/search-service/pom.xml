@@ -59,11 +59,6 @@
 			<optional>true</optional>
 		</dependency>
 		<dependency>
-			<groupId>com.github.pagehelper</groupId>
-			<artifactId>pagehelper-spring-boot-starter</artifactId>
-			<version>${pagehelper-spring-boot-starter}</version>
-		</dependency>
-		<dependency>
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-solr</artifactId>
 		</dependency>
@@ -78,9 +73,8 @@
 				<directory>src/main/java</directory>
 				<includes>
 					<include>**/*.xml</include>
-					<include>**/*.properties</include>
 				</includes>
-				<filtering>true</filtering>
+				<filtering>false</filtering>
 			</resource>
 		</resources>
 		<plugins>
