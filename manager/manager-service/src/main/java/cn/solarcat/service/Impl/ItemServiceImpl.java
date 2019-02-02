@@ -39,6 +39,10 @@ import cn.solarcat.service.ItemService;
 @Service
 @Component
 public class ItemServiceImpl implements ItemService {
+//	@Autowired
+//	private ItemSendTaskQueue itemSendTaskQueue;
+//	@Autowired
+//	private ItemSendTaskTopic itemSendTaskTopic;
 	@Autowired
 	private TbItemMapper itemMapper;
 	@Autowired
@@ -70,7 +74,7 @@ public class ItemServiceImpl implements ItemService {
 //				return textMessage;
 //			}
 //		});
-		jmsTemplate.send(ActiveMQConfiguration.ITEM_ADD, new MessageCreator() {
+		jmsTemplate.send(ActiveMQConfiguration.ITEM_ADD_TOPIC, new MessageCreator() {
 			@Override
 			public Message createMessage(Session session) throws JMSException {
 				TextMessage textMessage = session.createTextMessage(Id + "");
@@ -78,6 +82,13 @@ public class ItemServiceImpl implements ItemService {
 			}
 		});
 		// jmsTemplate.convertAndSend(itemTopic, jsonObject);
+
+//		try {
+//			itemSendTaskTopic.SendTopic(Id + "");
+//			itemSendTaskQueue.SendSearch(Id + "");
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		return SolarCatResult.ok();
 	}
 

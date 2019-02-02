@@ -25,7 +25,7 @@ public class ItemAddMessageCustomer {
 	@Autowired
 	private SolrClient solrClient;
 
-	@JmsListener(destination = ActiveMQConfiguration.ITEM_ADD)
+	@JmsListener(destination = ActiveMQConfiguration.ITEM_ADD_TOPIC)
 	public void onMessage(Message message) {
 		String text;
 		try {
@@ -45,9 +45,9 @@ public class ItemAddMessageCustomer {
 			solrClient.commit();
 
 		} catch (Exception e) {
-			logger.error("[" + STATUS.FAIL + "-" + ACTION.ADD + "]" + ": {\t}" + e.toString());
+			logger.error("[" + STATUS.FAIL + "-" + ACTION.ADD + "]" + ": {}", e.toString());
 		}
-		logger.info("[" + STATUS.SUCCESS + "-" + ACTION.ADD + "]" + ": {\t}" + message);
+		logger.info("[" + STATUS.SUCCESS + "-" + ACTION.ADD + "]" + ": {}", message);
 	}
 
 }

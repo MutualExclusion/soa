@@ -9,7 +9,7 @@ import org.springframework.jms.annotation.EnableJms;
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 
 @SpringBootApplication
-@ComponentScan(basePackages = { "cn.solarcat.aop" })
+@ComponentScan
 @MapperScan(basePackages = { "cn.solarcat.mapper" })
 @EnableDubbo
 @EnableJms
