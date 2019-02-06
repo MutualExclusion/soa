@@ -19,13 +19,13 @@ import cn.solarcat.service.ItemService;
 
 @Controller
 public class ItemController {
-	@Reference(timeout = 30000)
+	@Reference(timeout = 600000)
 	private ItemService itemService;
-	@Reference(timeout = 3000, retries = 0)
+	@Reference(timeout = 600000, retries = 0)
 	private ItemDescService itemDescService;
-	@Reference(timeout = 3000)
+	@Reference(timeout = 600000)
 	private ItemParamItemService itemParamItemService;
-	@Reference(timeout = 3000)
+	@Reference(timeout = 600000)
 	private ItemParamService itemParamService;
 
 	@RequestMapping("/item/{itemId}")

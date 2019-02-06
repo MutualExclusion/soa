@@ -14,7 +14,7 @@ import cn.solarcat.pojo.TbContent;
 
 @Controller
 public class ContentController {
-	@Reference(timeout = 3000)
+	@Reference(timeout = 600000)
 	private ContentService contentSevice;
 
 	@RequestMapping(value = "/content/save", method = RequestMethod.POST)

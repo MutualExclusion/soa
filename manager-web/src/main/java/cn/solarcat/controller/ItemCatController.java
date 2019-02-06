@@ -14,7 +14,7 @@ import cn.solarcat.service.ItemCatService;
 
 @Controller
 public class ItemCatController {
-	@Reference(timeout = 3000)
+	@Reference(timeout = 600000)
 	private ItemCatService itemCatService;
 
 	@RequestMapping("/item/cat/list")
