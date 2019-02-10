@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
 import cn.solarcat.common.pojo.EasyUIDataGridResult;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.pojo.TbItem;
 import cn.solarcat.pojo.TbItemDesc;
@@ -28,6 +31,7 @@ public class ItemController {
 	@Reference(timeout = 600000)
 	private ItemParamService itemParamService;
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/item/{itemId}")
 	@ResponseBody
 	public TbItem getItemById(@PathVariable Long itemId) {
@@ -35,6 +39,7 @@ public class ItemController {
 		return tbItem;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/item/list")
 	@ResponseBody
 	public EasyUIDataGridResult getItemList(Integer page, Integer rows) {
@@ -42,6 +47,7 @@ public class ItemController {
 		return result;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/item/save", method = RequestMethod.POST)
 	@ResponseBody
 	public SolarCatResult addItem(TbItem tbItem, String desc) {
@@ -49,6 +55,7 @@ public class ItemController {
 		return result;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/rest/item/delete", method = RequestMethod.POST)
 	@ResponseBody
 	public SolarCatResult deleteItem(String ids) {
@@ -60,6 +67,7 @@ public class ItemController {
 		return solarCatResult;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/rest/item/query/item/desc/{itemId}")
 	@ResponseBody
 	public SolarCatResult loadItemDesc(@PathVariable Long itemId) {
@@ -68,11 +76,13 @@ public class ItemController {
 
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/rest/page/item-edit")
 	public String goToEdit(Long time) {
 		return "item-edit";
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/rest/item/param/item/query/{itemId}")
 	@ResponseBody
 	public SolarCatResult loadItemQuery(@PathVariable Long itemId) {
@@ -81,6 +91,7 @@ public class ItemController {
 
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/rest/item/update")
 	@ResponseBody
 	public SolarCatResult updateItem(TbItem item, TbItemDesc itemDesc) {
@@ -89,6 +100,7 @@ public class ItemController {
 
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/rest/item/instock")
 	@ResponseBody
 	public SolarCatResult updateInstock(String ids) {
@@ -100,6 +112,7 @@ public class ItemController {
 		return result;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/rest/item/reshelf")
 	@ResponseBody
 	public SolarCatResult updateReshelf(String ids) {
@@ -111,6 +124,7 @@ public class ItemController {
 		return result;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/item/param/list")
 	@ResponseBody
 	public EasyUIDataGridResult getItemParamList(int page, int rows) {

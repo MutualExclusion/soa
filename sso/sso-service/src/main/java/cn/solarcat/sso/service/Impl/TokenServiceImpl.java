@@ -10,6 +10,9 @@ import org.springframework.stereotype.Component;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSONObject;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.pojo.TbUser;
 import cn.solarcat.sso.service.TokenService;
@@ -22,6 +25,7 @@ public class TokenServiceImpl implements TokenService {
 	private int SESSION_EXPIRE = 1800;
 
 	@Override
+	@Log(action = ACTION.SELECT, level = LEVEL.SERVICE)
 	public SolarCatResult getUserByToken(String token) {
 		String json = redisTemplate.opsForValue().get("SESSION:" + token);
 		if (StringUtils.isBlank(json)) {

@@ -7,15 +7,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.pojo.SearchResult;
 import cn.solarcat.search.service.SearchService;
 
 @Controller
 public class SearchController {
-	@Reference(timeout = 3000)
+	@Reference(timeout = 600000)
 	private SearchService searchService;
 	private Integer SEARCH_RESULT_ROWS = 60;
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/search")
 	public String searchItemList(String keyword, @RequestParam(defaultValue = "1") Integer page, Model model)
 			throws Exception {
@@ -26,6 +30,5 @@ public class SearchController {
 		model.addAttribute("recordCount", searchResult.getRecordCount());
 		model.addAttribute("itemList", searchResult.getItemList());
 		return "search";
-
 	}
 }

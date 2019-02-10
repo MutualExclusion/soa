@@ -60,7 +60,7 @@ public class HtmlGenListener {
 			Long itemId = new Long(text);
 			logger.info("{}", itemId);
 			// 等待事务提交
-			Thread.sleep(1000);
+			Thread.sleep(60000);
 			// 根据商品id查询商品信息，商品基本信息和商品描述。
 			TbItem tbItem = itemService.getTbItemById(itemId);
 			Item item = new Item(tbItem);

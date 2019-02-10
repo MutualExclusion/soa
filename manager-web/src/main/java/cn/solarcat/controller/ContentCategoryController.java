@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
 import cn.solarcat.common.pojo.EasyUITreeNode;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.content.service.ContentCategoryService;
 
@@ -18,6 +21,7 @@ public class ContentCategoryController {
 	@Reference(timeout = 600000)
 	private ContentCategoryService contentCategoryService;
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/content/category/list")
 	@ResponseBody
 	public List<EasyUITreeNode> getContCatList(@RequestParam(name = "id", defaultValue = "0") Long parentId) {
@@ -26,6 +30,7 @@ public class ContentCategoryController {
 
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/content/category/create")
 	@ResponseBody
 	public SolarCatResult addContCat(Long parentId, String name) {
@@ -33,6 +38,7 @@ public class ContentCategoryController {
 		return result;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/content/category/update")
 	@ResponseBody
 	public SolarCatResult updateContCat(Long id, String name) {
@@ -40,6 +46,7 @@ public class ContentCategoryController {
 		return result;
 	}
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/content/category/delete")
 	@ResponseBody
 	public SolarCatResult daleteContCat(Long id) {

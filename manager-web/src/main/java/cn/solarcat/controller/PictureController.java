@@ -21,6 +21,10 @@ import com.qiniu.storage.UploadManager;
 import com.qiniu.storage.model.DefaultPutRet;
 import com.qiniu.util.Auth;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
+import cn.solarcat.common.pojo.LEVEL;
+
 @Controller
 public class PictureController {
 	private String ACCESS_KEY = "RxP7sU-RUTe6Em54E4IlZOnCrq7kiSjGuI9m1GfK";
@@ -28,6 +32,7 @@ public class PictureController {
 	private String BUCKET = "solrcat";
 	private String IMAGE_SERVER_URL_QINIU = "http://img.solarcat.cn/";
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/pic/upload", produces = MediaType.TEXT_PLAIN_VALUE + ";charset=utf-8")
 	@ResponseBody
 	public String PicUpload(MultipartFile uploadFile) throws IOException {

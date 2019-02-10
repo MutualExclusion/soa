@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.fastjson.JSONObject;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.sso.service.TokenService;
 
@@ -18,6 +21,7 @@ public class TokenController {
 	@Reference
 	private TokenService tokenService;
 
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping(value = "/user/token/{token}", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	@ResponseBody
 	public String getUserByToken(@PathVariable String token, String callback) {

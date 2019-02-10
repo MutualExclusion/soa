@@ -23,5 +23,9 @@ public enum ACTION {
 	/**
 	 * 更新
 	 */
-	UPDATE;
+	UPDATE,
+	/**
+	 * 
+	 */
+	MUTUAL;
 }

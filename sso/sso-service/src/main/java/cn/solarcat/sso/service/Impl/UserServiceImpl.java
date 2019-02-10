@@ -14,6 +14,9 @@ import org.springframework.util.DigestUtils;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSONObject;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.mapper.TbUserMapper;
 import cn.solarcat.pojo.TbUser;
@@ -32,6 +35,7 @@ public class UserServiceImpl implements UserService {
 	private Integer SESSION_EXPIRE = 1800;
 
 	@Override
+	@Log(action = ACTION.SELECT, level = LEVEL.SERVICE)
 	public SolarCatResult checkData(String param, int type) {
 		// 1、从tb_user表中查询数据
 		TbUserExample example = new TbUserExample();
@@ -59,6 +63,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Log(action = ACTION.ADD, level = LEVEL.SERVICE)
 	public SolarCatResult register(TbUser user) {
 		// 数据有效性校验
 		if (StringUtils.isBlank(user.getUsername()) || StringUtils.isBlank(user.getPassword())
@@ -82,6 +87,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Log(action = ACTION.SELECT, level = LEVEL.SERVICE)
 	public SolarCatResult login(String username, String password) {
 		TbUserExample example = new TbUserExample();
 		Criteria criteria = example.createCriteria();

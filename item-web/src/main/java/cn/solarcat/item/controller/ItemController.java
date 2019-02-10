@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
+import cn.solarcat.aop.Log;
+import cn.solarcat.common.pojo.ACTION;
+import cn.solarcat.common.pojo.LEVEL;
 import cn.solarcat.item.pojo.Item;
 import cn.solarcat.pojo.TbItem;
 import cn.solarcat.pojo.TbItemDesc;
@@ -18,6 +21,7 @@ public class ItemController {
 	private ItemService itemService;
 
 	@RequestMapping("/item/{itemId}")
+	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	public String showItemInfo(@PathVariable Long itemId, Model model) {
 		TbItem tbItem = itemService.getTbItemById(itemId);
 		Item item = new Item(tbItem);
