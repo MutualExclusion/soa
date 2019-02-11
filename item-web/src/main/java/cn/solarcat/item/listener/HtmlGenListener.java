@@ -26,20 +26,6 @@ import cn.solarcat.service.ItemService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
-/**
- * 监听商品添加消息，生成对应的静态页面
- * <p>
- * Title: HtmlGenListener
- * </p>
- * <p>
- * Description:
- * </p>
- * <p>
- * Company: www.itcast.cn
- * </p>
- * 
- * @version 1.0
- */
 @Component
 public class HtmlGenListener {
 
@@ -60,7 +46,7 @@ public class HtmlGenListener {
 			Long itemId = new Long(text);
 			logger.info("{}", itemId);
 			// 等待事务提交
-			Thread.sleep(60000);
+			Thread.sleep(1000);
 			// 根据商品id查询商品信息，商品基本信息和商品描述。
 			TbItem tbItem = itemService.getTbItemById(itemId);
 			Item item = new Item(tbItem);

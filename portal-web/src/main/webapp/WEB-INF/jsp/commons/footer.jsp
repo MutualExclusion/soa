@@ -11,12 +11,10 @@
 	  </div>
 	  <div class="foot">
 	  <div class="pageFooter">
-	  <div class="middle">
 	  <ul>
 		<li class="kefu">4008-888-888</li>
 		<li>周一至周日8:30-22:00</li>
 	  </ul>
-	  </div>
       <div class="right">
         <ul>
           <li class="title">购物指南</li>
