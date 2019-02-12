@@ -16,7 +16,7 @@ import cn.solarcat.sso.service.TokenService;
 
 public class LoginInterceptor implements HandlerInterceptor {
 
-	@Reference
+	@Reference(timeout = 600000)
 	private TokenService tokenService;
 
 	@Override

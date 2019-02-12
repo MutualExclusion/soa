@@ -42,9 +42,9 @@ public class CartController {
 
 	private Integer COOKIE_CART_EXPIRE = 432000;
 
-	@Reference
+	@Reference(timeout = 600000)
 	private ItemService itemService;
-	@Reference
+	@Reference(timeout = 600000)
 	private CartService cartService;
 
 	@RequestMapping("/cart/add/{itemId}")

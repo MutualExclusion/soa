@@ -67,12 +67,6 @@
 			<artifactId>dubbo-spring-boot-starter</artifactId>
 			<version>${dubbo-spring-boot-starter}</version>
 		</dependency>
-		<!-- 数据库连接池 -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>druid-spring-boot-starter</artifactId>
-			<version>${druid-spring-boot-starter}</version>
-		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

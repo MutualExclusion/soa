@@ -1,12 +1,11 @@
 var E3MALL = {
 	checkLogin : function(){
 		var _ticket = $.cookie("token");
-		alert(_ticket)
 		if(!_ticket){
 			return ;
 		}
 		$.ajax({
-			url : "http://localhost:8088/user/token/" + _ticket,
+			url : "http://sso.solarcat.cn/user/token/" + _ticket,
 			dataType : "jsonp",
 			type : "GET",
 			success : function(data){

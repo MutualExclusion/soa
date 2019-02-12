@@ -16,7 +16,7 @@ import cn.solarcat.pojo.TbContent;
 
 @Controller
 public class IndexController {
-	@Reference(timeout = 3000)
+	@Reference(timeout = 600000)
 	private ContentService contentService;
 	private Long CONTENT_LUNBO_ID = 89L;
 
