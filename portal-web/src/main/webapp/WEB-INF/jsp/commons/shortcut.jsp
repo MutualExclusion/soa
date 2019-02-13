@@ -16,23 +16,27 @@
         <span class="outline"></span>
         <span class="blank"></span>
         <div class="dd">
-          <div><a name="sfbest_hp_hp_head_home2" class="trackref" href="#" rel="nofollow">我的订单</a></div>
-          <div><a name="sfbest_hp_hp_head_home4" class="trackref" href="#" rel="nofollow">我的积分</a></div>
-          <div><a name="sfbest_hp_hp_head_home3" class="trackref" href="#" rel="nofollow">我的收藏</a></div>
+          <div><a name="sfbest_hp_hp_head_home2" class="trackref" href="http://home.e3mall.cn/myorder/index/" rel="nofollow">我的订单</a></div>
+          <div><a name="sfbest_hp_hp_head_home4" class="trackref" href="http://home.e3mall.cn/my/points/" rel="nofollow">我的积分</a></div>
+          <div><a name="sfbest_hp_hp_head_home3" class="trackref" href="http://home.e3mall.cn/favorites/index/" rel="nofollow">我的收藏</a></div>
           <!-- <div><a href="http://home.e3mall.cn/my/balance/" rel="nofollow">账户余额</a></div> -->
-          <div><a href="#" rel="nofollow">我的优选卡</a></div>
-          <div><a href="#" rel="nofollow">我的优惠券</a></div>
+          <div><a href="http://home.e3mall.cn/giftcard/list/" rel="nofollow">我的优选卡</a></div>
+          <div><a href="http://home.e3mall.cn/usercoupon/list/" rel="nofollow">我的优惠券</a></div>
         </div>
       </li>
-	  <li class="d2 tShow"><s></s><q></q><a name="sfbest_hp_hp_head_app1" class="trackref" href="#" target="_blank">移动客户端</a>
+	  <li class="d2 tShow"><s></s><q></q><a name="sfbest_hp_hp_head_app1" class="trackref" href="http://app.e3mall.cn/" target="_blank">移动客户端</a>
         <div class="dd">
           <div class="sf-client">
             <span class="client-img"></span>
             <i></i>
             <div class="client-txt">
-              <em>扫描我，即可关注</em>
-              <strong>solarcat公众号</strong>
+              <em>扫描我，即可下载</em>
+              <strong>宜立方商城客户端</strong>
             </div>
+          </div>
+          <div class="app-btn">
+            <a class="app-apple" target="_blank" rel="nofollow" href="http://itunes.apple.com/cn/app/id563194150"></a>
+            <a class="app-android" target="_blank" rel="nofollow" href="http://android.e3mall.cn/sfandroid"></a>
           </div>
 		  <div class="client-promo"><a class="trackref" rel="nofollow" href="http://app.e3mall.cn" target="_blank" name="sfbest_hp_hp_head_app2">先摇券 后买单</a>
 		  </div>
@@ -51,6 +55,7 @@
           <div><a name="sfbest_hp_hp_head_help3" class="trackref" href="http://help.e3mall.cn/141/134.html" rel="nofollow" target="_blank">配送服务</a></div>
           <div><a name="sfbest_hp_hp_head_help4" class="trackref" href="http://help.e3mall.cn/143/131.html" rel="nofollow" target="_blank">支付方式</a></div>
           <div><a name="sfbest_hp_hp_head_help5" class="trackref" href="http://help.e3mall.cn/144/143.html" rel="nofollow" target="_blank">售后服务</a></div>
+        
           <div><a name="sfbest_hp_hp_head_help7" class="trackref" href="http://help.e3mall.cn/377/4407.html" rel="nofollow" target="_blank">客服邮箱</a></div>
           <div><a name="sfbest_hp_hp_head_help8" class="trackref" href="http://help.e3mall.cn/377/6766.html" rel="nofollow" target="_blank">投诉与建议</a></div>
         </div>
