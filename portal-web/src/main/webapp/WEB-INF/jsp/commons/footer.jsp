@@ -73,7 +73,6 @@
 	<div class="clear1"></div>
       <div class="siteinfo">
 		<p><span><a rel="nofollow" href="#" target="_blank">关于我们</a></span><span><a rel="nofollow" href="#" target="_blank">联系我们</a></span><span><a rel="nofollow" href="#" target="_blank">招聘人才</a></span><span><a href="#" target="_blank">友情链接</a></span><span><a rel="nofollow" href="#" target="_blank">供应商申请</a></span><span>Copyright© solarcat.cn 版权所有</span></p>
-		<p><span>京公网安备11010502026831号</span><span><a class="beian" rel="nofollow" target="_blank" href="http://www.miibeian.gov.cn">京ICP证150325号</a></span><span>食品流通许可证SP1101131210068671(1-1)号</span><span><a class="beian" rel="nofollow" target="_blank" href="#">企业营业执照</a></span></p>
       </div>
     </div>
     </div>

@@ -8,7 +8,7 @@
     <div class="logo">
         
         <div class="index_topad" id="playLogo" style="">
-            <a href="/html/activity/1472179566.html" target="_blank">
+            <a href="#" target="_blank">
               <img src="/images/html/20160829181637762.gif">
             </a> 
         </div>
