@@ -116,7 +116,7 @@
 					if (data.status == 200) {
 						jAlert('登录成功！', "提示", function() {
 							if (redirectUrl == "") {
-								location.href = "http://localhost:8082";
+								location.href = "http://view.solarcat.cn/index";
 							} else {
 								location.href = redirectUrl;
 							}
