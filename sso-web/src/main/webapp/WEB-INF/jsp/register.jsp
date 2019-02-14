@@ -19,7 +19,7 @@
 <body>
 		<!-- header -->
 		<div class="header">
-			<a href="http://www.e3mall.cn"><img src="/images/logo.png" border="0" /><span>欢迎注册</span></a>
+			<a href="http://www.solarcat.cn"><span>欢迎注册</span></a>
 		</div>
 
 		<!--mainStart-->

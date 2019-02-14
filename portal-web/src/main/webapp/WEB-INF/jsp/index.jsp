@@ -9,7 +9,6 @@
     <title>solarcat-宜立方旗下全球美食优选网购商城-进口食品、母婴、营养保健品、生鲜、粮油、酒水饮料、休闲食品-宜立方商城e3mall.cn</title>
     <meta name="Keywords" content="进口食品,网上超市,网上购物,进口奶粉,宜立方商城,sfbest,母婴用品,营养保健品,生鲜食品,粮油,酒水,休闲食品">
     <meta name="Description" content="宜立方商城宜立方旗下全球美食优选网购商城，精选来自60多个国家和地区的进口食品，正品行货，支持货到付款。销售包括进口奶粉、母婴用品、营养保健品、生鲜食品、粮油、酒水、休闲食品等近万种商品。">
-    <link rel="dns-prefetch" href="//pic.e3mall.cn">
     <meta property="wb:webmaster" content="3a008ad947166307">
     <link rel="stylesheet" type="text/css" href="/css/base_w1200.css?v=2016071333">
     <link rel="stylesheet" type="text/css" href="/css/index.css?v=2016071312">
@@ -69,14 +68,6 @@
       			<c:forEach items="${ad1List }" varStatus="status">
       			<li class="<c:if test="${status.index==0 }">cur</c:if>">${status.index+1 }</li>
       			</c:forEach>
-		        <!-- <li class="cur">1</li>
-		        <li class="">2</li>
-		        <li class="">3</li>
-		        <li class="">4</li>
-		        <li class="">5</li>
-		        <li class="">6</li>
-		        <li class="">7</li>
-		        <li class="">8</li> -->
 		      </ul>
       <div class="indexbg" id="indexbg">
       <dl style="left: -1903px;">

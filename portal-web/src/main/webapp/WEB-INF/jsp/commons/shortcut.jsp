@@ -5,26 +5,26 @@
     <ul class="fr topTh">
       <li class="login" id="login">
       	<span id="loginbar" style="margin-right: 15px;">
-	      	<a href="http://sso.solarcat.cn/page/login">请登录</a>
+	      	<a href="http://sso.view.solarcat.cn/page/login">请登录</a>
       	</span>
-      	<a href="http://sso.solarcat.cn/page/register">免费注册</a>
+      	<a href="http://sso.view.solarcat.cn/page/register">免费注册</a>
       </li>
       <!--<li id='qiyeLogin'><a href='http://www.sfme.me/login.jhtml' target='_blank' rel='nofollow'>员工福利</a></li>-->
-      <li class="myOrder"><a name="sfbest_hp_hp_head_OrderList" class="trackref" href="http://home.e3mall.cn/myorder/index/" rel="nofollow">我的订单</a></li>
+      <li class="myOrder"><a name="sfbest_hp_hp_head_OrderList" class="trackref" href="#" rel="nofollow">我的订单</a></li>
       <li class="menus">
-        <a name="sfbest_hp_hp_head_home1" href="http://home.e3mall.cn/my/index/" rel="nofollow" class="trackref t">我的优选</a><b></b>
+        <a name="sfbest_hp_hp_head_home1" href="#" rel="nofollow" class="trackref t">我的优选</a><b></b>
         <span class="outline"></span>
         <span class="blank"></span>
         <div class="dd">
-          <div><a name="sfbest_hp_hp_head_home2" class="trackref" href="http://home.e3mall.cn/myorder/index/" rel="nofollow">我的订单</a></div>
-          <div><a name="sfbest_hp_hp_head_home4" class="trackref" href="http://home.e3mall.cn/my/points/" rel="nofollow">我的积分</a></div>
-          <div><a name="sfbest_hp_hp_head_home3" class="trackref" href="http://home.e3mall.cn/favorites/index/" rel="nofollow">我的收藏</a></div>
+          <div><a name="sfbest_hp_hp_head_home2" class="trackref" href="#" rel="nofollow">我的订单</a></div>
+          <div><a name="sfbest_hp_hp_head_home4" class="trackref" href="#" rel="nofollow">我的积分</a></div>
+          <div><a name="sfbest_hp_hp_head_home3" class="trackref" href="#" rel="nofollow">我的收藏</a></div>
           <!-- <div><a href="http://home.e3mall.cn/my/balance/" rel="nofollow">账户余额</a></div> -->
-          <div><a href="http://home.e3mall.cn/giftcard/list/" rel="nofollow">我的优选卡</a></div>
-          <div><a href="http://home.e3mall.cn/usercoupon/list/" rel="nofollow">我的优惠券</a></div>
+          <div><a href="#" rel="nofollow">我的优选卡</a></div>
+          <div><a href="#" rel="nofollow">我的优惠券</a></div>
         </div>
       </li>
-	  <li class="d2 tShow"><s></s><q></q><a name="sfbest_hp_hp_head_app1" class="trackref" href="http://app.e3mall.cn/" target="_blank">移动客户端</a>
+	  <li class="d2 tShow"><s></s><q></q><a name="sfbest_hp_hp_head_app1" class="trackref" href="#" target="_blank">移动客户端</a>
         <div class="dd">
           <div class="sf-client">
             <span class="client-img"></span>
@@ -35,8 +35,8 @@
             </div>
           </div>
           <div class="app-btn">
-            <a class="app-apple" target="_blank" rel="nofollow" href="http://itunes.apple.com/cn/app/id563194150"></a>
-            <a class="app-android" target="_blank" rel="nofollow" href="http://android.e3mall.cn/sfandroid"></a>
+            <a class="app-apple" target="_blank" rel="nofollow" href="#"></a>
+            <a class="app-android" target="_blank" rel="nofollow" href="#"></a>
           </div>
 		  <div class="client-promo"><a class="trackref" rel="nofollow" href="http://app.e3mall.cn" target="_blank" name="sfbest_hp_hp_head_app2">先摇券 后买单</a>
 		  </div>
