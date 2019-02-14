@@ -18,7 +18,7 @@
 <body>
 	<!-- header -->
 	<div class="header">
-		<a href="http://www.solarcat.cn"><span>欢迎登录</span></a>
+		<a href="http://solarcat.cn"><span>欢迎登录</span></a>
 	</div>
 	<!-- login_main -->
 	<div class="login_main clear">
