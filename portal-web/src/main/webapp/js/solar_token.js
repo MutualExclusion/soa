@@ -1,4 +1,4 @@
-var E3MALL = {
+var SOLAR = {
 	checkLogin : function(){
 		var _ticket = $.cookie("token");
 		alert(_ticket);
@@ -6,7 +6,7 @@ var E3MALL = {
 			return ;
 		}
 		$.ajax({
-			url : "http://sso.solarcat.cn/user/token/" + _ticket,
+			url : "http://sso.view.solarcat.cn/user/token/" + _ticket,
 			dataType : "jsonp",
 			type : "GET",
 			success : function(data){
@@ -22,5 +22,5 @@ var E3MALL = {
 
 $(function(){
 	// 查看是否已经登录，如果已经登录查询登录信息
-	E3MALL.checkLogin();
+	SOLAR.checkLogin();
 });

@@ -24,28 +24,6 @@
           <div><a href="#" rel="nofollow">我的优惠券</a></div>
         </div>
       </li>
-	  <li class="d2 tShow"><s></s><q></q><a name="sfbest_hp_hp_head_app1" class="trackref" href="#" target="_blank">移动客户端</a>
-        <div class="dd">
-          <div class="sf-client">
-            <span class="client-img"></span>
-            <i></i>
-            <div class="client-txt">
-              <em>扫描我，即可下载</em>
-              <strong>宜立方商城客户端</strong>
-            </div>
-          </div>
-          <div class="app-btn">
-            <a class="app-apple" target="_blank" rel="nofollow" href="#"></a>
-            <a class="app-android" target="_blank" rel="nofollow" href="#"></a>
-          </div>
-		  <div class="client-promo"><a class="trackref" rel="nofollow" href="http://app.e3mall.cn" target="_blank" name="sfbest_hp_hp_head_app2">先摇券 后买单</a>
-		  </div>
-        </div>
-        <div class="corner">
-          <div class="aBg"></div>
-          <div class="aCt"></div>
-        </div>
-      </li>
 	  <li class="menus">
         <a name="sfbest_hp_hp_head_help1" href="http://help.e3mall.cn/" target="_blank" class="trackref t">帮助中心</a><b></b>
         <span class="outline"></span>
@@ -65,21 +43,20 @@
           <dl>
             <dt class="dh1">商品分类</dt>
             <dd>
-				<a name="sfbest_hp_hp_head_category1" class="trackref" href="/fresh/" target="_blank">肉类海鲜</a>
-				<a name="sfbest_hp_hp_head_category2" class="trackref" href="/fresh/" target="_blank">熟食蛋奶</a>
-				<a name="sfbest_hp_hp_head_category3" class="trackref" href="/fresh/" target="_blank">水果蔬菜</a>
-				<a name="sfbest_hp_hp_head_category4" class="trackref" href="/drinks/4-0-0-0-0-2-0-0-0-0-0.html" target="_blank">酒水饮料</a>
-				<a name="sfbest_hp_hp_head_category5" class="trackref" href="/food/6-0-0-0-0-2-0-0-0-0-0.html" target="_blank">休闲食品</a>
-				<a name="sfbest_hp_hp_head_category6" class="trackref" href="/tea/5-0-0-0-0-2-0-0-0-0-0.html" target="_blank">冲调茶饮</a>
-				<a name="sfbest_hp_hp_head_category7" class="trackref" href="/oil/3-0-0-0-0-2-0-0-0-0-0.html" target="_blank">粮油副食</a>
-				<a name="sfbest_hp_hp_head_category8" class="trackref" href="/oil/24-0-0-0-0-2-0-0-0-0-0.html" target="_blank">南北干货</a>
+				<a name="hp_head_category1" class="trackref" href="#" target="_blank">肉类海鲜</a>
+				<a name="hp_head_category2" class="trackref" href="#" target="_blank">熟食蛋奶</a>
+				<a name="hp_head_category3" class="trackref" href="#" target="_blank">水果蔬菜</a>
+				<a name="hp_head_category4" class="trackref" href="#" target="_blank">酒水饮料</a>
+				<a name="hp_head_category5" class="trackref" href="#" target="_blank">休闲食品</a>
+				<a name="hp_head_category6" class="trackref" href="#" target="_blank">冲调茶饮</a>
+				<a name="hp_head_category7" class="trackref" href="#" target="_blank">粮油副食</a>
+				<a name="hp_head_category8" class="trackref" href="#" target="_blank">南北干货</a>
             </dd>
           </dl>
           <dl class="line"></dl>
           <dl>
             <dt class="dh2">特色频道</dt>
-            <dd><a name="sfbest_hp_hp_head_channel12" class="trackref" href="http://www.sfbest.hk" target="_blank">跨境直发</a><a name="sfbest_hp_hp_head_channel2" class="trackref" href="/qiye/" target="_blank">企业专区</a><a name="sfbest_hp_hp_head_channel3" class="trackref" href="/wine/" target="_blank">红酒廊</a><a name="sfbest_hp_hp_head_channel4" class="trackref" href="/taste/" target="_blank">寰宇美食</a><!-- <a name="sfbest_hp_hp_head_channel5" class="trackref" href="/healthy/" target="_blank">健康养生</a> -->
-            <!-- <a name="sfbest_hp_hp_head_channel6" class="trackref" href="/member/" target="_blank">会员俱乐部</a> --></dd>
+            <dd><a name="sfbest_hp_hp_head_channel12" class="trackref" href="http://www.sfbest.hk" target="_blank">跨境直发</a><a name="sfbest_hp_hp_head_channel2" class="trackref" href="/qiye/" target="_blank">企业专区</a><a name="sfbest_hp_hp_head_channel3" class="trackref" href="/wine/" target="_blank">红酒廊</a><a name="sfbest_hp_hp_head_channel4" class="trackref" href="/taste/" target="_blank">寰宇美食</a>
           </dl>
           <dl class="line"></dl>
           <dl>
@@ -88,20 +65,9 @@
           </dl>
         </div>
       </li>
-      <li class="d3 tShow"><a name="sfbest_hp_hp_head_weibo" class="trackref" title="关注宜立方商城微博" href="http://weibo.com/sfbest" rel="nofollow" target="_blank"><q></q></a></li>
-      <li class="d4 tShow"><q></q><!--微信-->
-         <div class="dd">
-         <div class="sf_wx_t">关注宜立方商城微信</div>
-         <div class="sf_wx"></div>
-        </div>
-        <div class="corner">
-          <div class="aBg"></div>
-          <div class="aCt"></div>
-        </div>
-       </li>
     </ul>
     <span class="clear"></span>
   </div>
-  <script type="text/javascript" src="/js/e3mall.js"></script>
+  <script type="text/javascript" src="/js/solar_token.js"></script>
   <script type="text/javascript" src="/js/jquery.cookie.js"></script>
 </div>
