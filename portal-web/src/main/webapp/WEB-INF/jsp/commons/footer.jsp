@@ -46,11 +46,11 @@
 			</div>
 		</div>
 	</div>
-</div>
-<div class="middle">
+	<div class="middle">
 	<span> <a href="#" rel="nofollow" class="footerlink1">关于我们</a> | <a href="#" rel="nofollow" class="footerlink1">联系我们</a> | <a href="#" rel="nofollow" class="footerlink1">招聘人才</a> | <a href="#" rel="nofollow" class="footerlink1">友情链接</a> | <a href="#" rel="nofollow" class="footerlink1">供应商申请</a>
 	</span>
 	<p>
 		Copyright© solarcat.cn 版权所有<br>
 	</p>
+</div>
 </div>

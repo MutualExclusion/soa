@@ -1,7 +1,6 @@
 var SOLAR = {
 	checkLogin : function(){
 		var _ticket = $.cookie("token");
-		alert(_ticket);
 		if(!_ticket){
 			return ;
 		}
