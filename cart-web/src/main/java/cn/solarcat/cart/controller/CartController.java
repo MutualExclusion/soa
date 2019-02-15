@@ -190,7 +190,7 @@ public class CartController {
 		TbUser user = (TbUser) request.getAttribute("user");
 		if (user != null) {
 			cartService.deleteCartItem(user.getId(), itemId);
-			return "redirect:/cart/cart.html";
+			return "redirect:/cart/cart";
 		}
 		// 从cookie中取购物车列表
 		List<TbItem> cartList = getCartListFromCookie(request);
@@ -206,6 +206,6 @@ public class CartController {
 		// 把购物车列表写入cookie
 		CookieUtils.setCookie(request, response, "cart", JSONObject.toJSONString(cartList), COOKIE_CART_EXPIRE, true);
 		// 返回逻辑视图
-		return "redirect:/cart/cart.html";
+		return "redirect:/cart/cart";
 	}
 }
