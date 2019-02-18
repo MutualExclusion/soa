@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="meta description">
+
+<title>欢迎登陆-solarcat</title>
+<link rel="icon" href="images/solar.ico">
+<!-- Bootstrap CSS -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<!-- Font-Awesome CSS -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!-- helper class css -->
+<link href="css/helper.min.css" rel="stylesheet">
+<!-- Plugins CSS -->
+<link href="css/plugins.css" rel="stylesheet">
+<!-- Main Style CSS -->
+<link href="css/style.css" rel="stylesheet">
+<link href="css/skin-default.css" rel="stylesheet" id="galio-skin">
+</head>
+
+<body>
+
+<!-- 	<div th:insert="~{header :: header}"></div> -->
+	<div class="wrapper box-layout">
+
+		<!-- breadcrumb area start -->
+		<div class="breadcrumb-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="breadcrumb-wrap">
+							<nav aria-label="breadcrumb">
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item">
+										<a href="http://view.solarcat.cn/index">首页</a>
+									</li>
+									<li class="breadcrumb-item active" aria-current="page">登陆-注册页</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- breadcrumb area end -->
+
+		<!-- login register wrapper start -->
+		<div class="login-register-wrapper">
+			<div class="container">
+				<div class="member-area-from-wrap">
+					<div class="row">
+						<!-- Login Content Start -->
+						<div class="col-lg-6">
+							<div class="login-reg-form-wrap  pr-lg-50">
+								<h2>登录</h2>
+								<form method="post" id="formlogin">
+									<div class="single-input-item">
+										<input id="username" name="username" type="text" placeholder="请输入账号/手机号/邮箱" required="">
+									</div>
+									<div class="single-input-item">
+										<input id="password" name="password" type="password" placeholder="请输入您的密码" required="" autocomplete="off">
+									</div>
+									<div class="single-input-item">
+										<div class="login-reg-form-meta d-flex align-items-center justify-content-between">
+											<div class="remember-meta">
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" class="custom-control-input" id="rememberMe"> <label class="custom-control-label" for="rememberMe">记住我</label>
+												</div>
+											</div>
+											<a href="#" class="forget-pwd">忘记密码？</a>
+										</div>
+									</div>
+									<div class="single-input-item">
+										<div class="sqr-btn" id="login_sub">登录</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<!-- Login Content End -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- login register wrapper end -->
+
+		<!-- brand area start -->
+
+		<!-- brand area end -->
+		<!-- footer area start -->
+		<div th:insert="~{footer :: footer}"></div>
+		<!-- footer area end -->
+	</div>
+
+	<!-- Scroll to top start -->
+	<div class="scroll-top not-visible">
+		<i class="fa fa-angle-up"></i>
+	</div>
+	<!-- Scroll to Top End -->
+
+
+	<!--All jQuery, Third Party Plugins Activation (main.js) Files-->
+	<script src="js/modernizr-3.6.0.min.js" type="text/javascript"></script>
+	<!-- Jquery Min Js -->
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+	<!-- Popper Min Js -->
+	<script src="js/popper.min.js" type="text/javascript"></script>
+	<!-- Bootstrap Min Js -->
+	<script src="js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- Plugins Js-->
+	<script src="js/plugins.js" type="text/javascript"></script>
+	<!-- Ajax Mail Js -->
+	<script src="js/ajax-mail.js" type="text/javascript"></script>
+	<!-- Active Js -->
+	<script src="js/main.js" type="text/javascript"></script>
+	<script src="layer/layer.js" type="text/javascript"></script>
+	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+	<script type="text/javascript">
+	var LOGIN = {
+			checkInput:function() {
+				if(!$("#formlogin #username").val()) {
+					return false;
+				}
+				if(!$("#formlogin input[name='password']").val()) {
+					return false;
+				}
+				return true;
+			},
+			doLogin:function() {
+				$.post("/user/login", $("#formlogin").serialize(),function(data){
+					if (data.status == 200) {
+						layer.alert('登录成功！',"提示", function(){
+							location.href = "http://view.solarcat.cn/index";
+						});
+
+					} else {
+						layer.alert("登录失败，原因是：" + data.msg);
+					}
+				});
+			},
+			login:function() {
+				if (this.checkInput()) {
+					this.doLogin();
+				}
+			}
+
+	};
+	$(function(){
+		$("#login_sub").click(function(){
+			LOGIN.login();
+		});
+	});
+	</script>
+	
+
+</body>
+
+</html>
