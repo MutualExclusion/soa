@@ -17,7 +17,7 @@ public class RegisterController {
 	@Reference
 	private UserService userService;
 
-	@RequestMapping("/page/register")
+	@RequestMapping("/register")
 	public String showRegister() {
 		return "register";
 	}

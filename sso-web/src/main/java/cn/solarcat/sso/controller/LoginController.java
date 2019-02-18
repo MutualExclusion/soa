@@ -20,7 +20,7 @@ public class LoginController {
 	private UserService userService;
 	private String TOKEN_KEY = "token";
 
-	@RequestMapping("/page/login")
+	@RequestMapping("/login")
 	public String showLogin() {
 		return "login";
 	}
