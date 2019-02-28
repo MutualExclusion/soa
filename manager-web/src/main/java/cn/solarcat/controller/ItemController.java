@@ -124,12 +124,4 @@ public class ItemController {
 		return result;
 	}
 
-	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
-	@RequestMapping(value = "/item/param/list")
-	@ResponseBody
-	public EasyUIDataGridResult getItemParamList(int page, int rows) {
-		EasyUIDataGridResult result = itemParamService.getItemParamList(page, rows);
-		return result;
-
-	}
 }
