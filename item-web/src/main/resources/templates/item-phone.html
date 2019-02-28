@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" data-th-fragment="header">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<!-- Site title -->
+    <title th:text="'商品详情页-'+${item.title}"></title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/images/solar.ico" type="image/x-icon" />
+    <!-- Bootstrap CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font-Awesome CSS -->
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <!-- helper class css -->
+    <link href="/css/helper.min.css" rel="stylesheet">
+    <!-- Plugins CSS -->
+    <link href="/css/plugins.css" rel="stylesheet">
+    <!-- Main Style CSS -->
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/skin-default.css" rel="stylesheet" id="galio-skin">
+
+</head>
+<body>
+
+    <div class="wrapper box-layout">
+        <!-- header area start -->
+        <div th:insert="~{header :: header}"></div>
+        <!-- header area end -->
+
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap">
+                            <nav aria-label="breadcrumb">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">首页</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">商品详情页</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- product details wrapper start -->
+        <div class="product-details-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <!-- product details inner end -->
+                        <div class="product-details-inner">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="product-large-slider mb-20 slick-arrow-style_2">
+                                        <div class="pro-large-img img-zoom" id="img1" th:each="img:${item.images}">
+                                            <img th:src="${img}" alt="${item.title}" />
+                                        </div>
+                                    </div>
+                                    <div class="pro-nav slick-padding2 slick-arrow-style_2">
+                                        <div class="pro-nav-thumb" th:each="img:${item.images}"><img th:src="${img}" alt="${item.title}" /></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="product-details-des mt-md-34 mt-sm-34">
+                                        <p th:text="${item.title}"></p>
+                                        <div class="ratings">
+                                            <span class="good"><i class="fa fa-star"></i></span>
+                                            <span class="good"><i class="fa fa-star"></i></span>
+                                            <span class="good"><i class="fa fa-star"></i></span>
+                                            <span class="good"><i class="fa fa-star"></i></span>
+                                            <span><i class="fa fa-star"></i></span>
+                                            <div class="pro-review">
+                                                <span>1 review(s)</span>
+                                            </div>
+                                        </div>
+                                        <div class="customer-rev">
+                                            <a href="#">(1 customer review)</a>
+                                        </div>
+                                        <div class="availability mt-10">
+                                            <h5>Availability:</h5>
+                                            <span>1 in stock</span>
+                                        </div>
+                                        <div class="pricebox">
+                                            <span class="regular-price" th:text="'￥'+${item.price/100}"></span>
+                                        </div>
+                                        <p th:text="${item.sellPoint }"></p>
+                                        <div class="quantity-cart-box d-flex align-items-center">
+                                            <div class="quantity">
+                                                <div class="pro-qty"><input type="text" value="1"></div>
+                                            </div>
+                                            <div class="action_link">
+                                                <a class="buy-btn" href="#">加入购物车<i class="fa fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+                                        <div class="useful-links mt-20">
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="不好使，别点了"><i class="fa fa-refresh"></i>刷新</a>
+                                            <a href="#" data-toggle="tooltip" data-placement="top" title="也不好使"><i class="fa fa-heart-o"></i>加入心愿单</a>
+                                        </div>
+                                        <div class="share-icon mt-20">
+                                            <a class="facebook" href="#"><i class="fa fa-facebook"></i>like</a>
+                                            <a class="twitter" href="#"><i class="fa fa-twitter"></i>tweet</a>
+                                            <a class="pinterest" href="#"><i class="fa fa-pinterest"></i>save</a>
+                                            <a class="google" href="#"><i class="fa fa-google-plus"></i>share</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- product details inner end -->
+
+                        <!-- product details reviews start -->
+                        <div class="product-details-reviews mt-34">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="product-review-info">
+                                        <ul class="nav review-tab">
+                                            <li>
+                                                <a class="active" data-toggle="tab" href="#tab_one">商品描述</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tab" href="#tab_two">详细参数</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tab" href="#tab_three">售后保障</a>
+                                            </li>
+                                            <li>
+                                                <a data-toggle="tab" href="#tab_four">评论</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content reviews-tab">
+                                            <div class="tab-pane fade show active" id="tab_one">
+                                                <div class="tab-one">
+                                                   	<p th:utext="${itemDesc.itemDesc}">
+                                                </div>
+                                            </div>
+                                            <div class="tab-pane fade" id="tab_two">
+                                                <table class="table table-bordered">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>可能需要杀个产品经理来祭天</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="tab-pane fade" id="tab_three">
+												<div>
+													<div>
+														<h3>售后保障</h3>
+													</div>
+													<div>
+														<div>
+															<div>
+																<dl>
+
+
+																	<dt>
+																		<strong>卖家服务</strong>
+																	</dt>
+																	<dd></dd>
+
+																	<dt>
+																		<strong>京东承诺</strong>
+																	</dt>
+																	<dd>
+																		京东平台卖家销售并发货的商品，由平台卖家提供发票和相应的售后服务。请您放心购买！<br> 注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！
+																	</dd>
+																	<dt>
+																		<strong> 正品行货 </strong>
+																	</dt>
+																	<dd>京东商城向您保证所售商品均为正品行货，京东自营商品开具机打发票或电子发票。</dd>
+																</dl>
+															</div>
+															<div>
+																<strong>权利声明：</strong><br>京东上的所有商品信息、客户评价、商品咨询、网友讨论等内容，是京东重要的经营资源，未经许可，禁止非法转载使用。
+																<p>
+																	<b>注：</b>本站商品信息均来自于合作方，其真实性、准确性和合法性由信息拥有者（合作方）负责。本站不提供任何保证，并不承担任何法律责任。
+																</p>
+																<br> <strong>价格说明：</strong><br>
+																<p>
+																	<b>京东价：</b>京东价为商品的销售价，是您最终决定是否购买商品的依据。
+																</p>
+																<p>
+																	<b>划线价：</b>商品展示的划横线价格为参考价，并非原价，该价格可能是品牌专柜标价、商品吊牌价或由品牌供应商提供的正品零售价（如厂商指导价、建议零售价等）或该商品在京东平台上曾经展示过的销售价；由于地区、时间的差异性和市场行情波动，品牌专柜标价、商品吊牌价等可能会与您购物时展示的不一致，该价格仅供您参考。
+																</p>
+																<p>
+																	<b>折扣：</b>如无特殊说明，折扣指销售商在原价、或划线价（如品牌专柜标价、商品吊牌价、厂商指导价、厂商建议零售价）等某一价格基础上计算出的优惠比例或优惠金额；如有疑问，您可在购买前联系销售商进行咨询。
+																</p>
+																<p>
+																	<b>异常问题：</b>商品促销信息以商品详情页“促销”栏中的信息为准；商品的具体售价以订单结算页价格为准；如您发现活动商品售价或促销信息有异常，建议购买前先联系销售商咨询。
+																</p>
+
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="tab_four">
+												<p>该功能正在开发中，敬请期待！</p>
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <!-- product details reviews end --> 
+                    </div>
+
+                    <!-- sidebar start -->
+                    <div class="col-lg-3">
+                        <div class="shop-sidebar-wrap fix mt-md-22 mt-sm-22">
+                            <!-- product tag start -->
+                            <div class="sidebar-widget mb-22">
+                                <div class="sidebar-title mb-20">
+                                    <h3>标签</h3>
+                                </div>
+                                <div class="sidebar-widget-body">
+                                    <div class="product-tag">
+                                        <a href="#">黑科技</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product tag end -->
+
+                            <!-- sidebar banner start -->
+                            <div class="sidebar-widget mb-22">
+                                <div class="img-container fix img-full mt-30">
+                                    <a href="#"><img src="/img/banner/banner_shop.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <!-- sidebar banner end -->
+                        </div>
+                    </div>
+                    <!-- sidebar end -->
+                </div>
+            </div>
+        </div>
+        <!-- product details wrapper end -->
+        <!-- footer area start -->
+        <div th:insert="~{footer :: footer}"></div>
+        <!-- footer area end -->
+
+    </div>
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+    <!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
+    <script src="/js/modernizr-3.6.0.min.js"></script>
+    <!-- Jquery Min Js -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <!-- Popper Min Js -->
+    <script src="/js/popper.min.js"></script>
+    <!-- Bootstrap Min Js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugins Js-->
+    <script src="/js/plugins.js"></script>
+    <!-- Ajax Mail Js -->
+    <script src="/js/ajax-mail.js"></script>
+    <!-- Active Js -->
+    <script src="/js/main.js"></script>
+    <!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+    
+</body>
+</html>

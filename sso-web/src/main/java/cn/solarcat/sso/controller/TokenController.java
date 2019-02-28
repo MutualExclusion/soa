@@ -18,7 +18,7 @@ import cn.solarcat.sso.service.TokenService;
 
 @Controller
 public class TokenController {
-	@Reference
+	@Reference(timeout = 600000)
 	private TokenService tokenService;
 
 	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)

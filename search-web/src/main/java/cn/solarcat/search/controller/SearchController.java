@@ -17,7 +17,7 @@ import cn.solarcat.search.service.SearchService;
 public class SearchController {
 	@Reference(timeout = 600000)
 	private SearchService searchService;
-	private Integer SEARCH_RESULT_ROWS = 60;
+	private Integer SEARCH_RESULT_ROWS = 32;
 
 	@Log(action = ACTION.MUTUAL, level = LEVEL.CONTROLLER)
 	@RequestMapping("/search")

@@ -35,4 +35,5 @@ public class TokenServiceImpl implements TokenService {
 		TbUser user = JSONObject.parseObject(json, TbUser.class);
 		return SolarCatResult.ok(user);
 	}
+
 }

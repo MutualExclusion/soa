@@ -10,4 +10,5 @@ public interface UserService {
 	SolarCatResult register(TbUser user);
 
 	SolarCatResult login(String username, String password);
+
 }

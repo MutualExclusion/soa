@@ -112,4 +112,5 @@ public class UserServiceImpl implements UserService {
 		// 6、返回e3Result包装token。
 		return SolarCatResult.ok(token);
 	}
+
 }

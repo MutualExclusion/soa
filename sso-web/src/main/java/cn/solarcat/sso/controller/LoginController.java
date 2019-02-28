@@ -11,18 +11,23 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.dubbo.config.annotation.Reference;
 
 import cn.solarcat.common.util.CookieUtils;
+import cn.solarcat.common.util.JudgeFunction;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.sso.service.UserService;
 
 @Controller
 public class LoginController {
-	@Reference
+	@Reference(timeout = 600000)
 	private UserService userService;
 	private String TOKEN_KEY = "token";
 
 	@RequestMapping("/login")
-	public String showLogin() {
-		return "login";
+	public String showLogin(HttpServletRequest request) {
+		if (JudgeFunction.JudgeIsMoblie(request)) {
+			return "login-phone";
+		} else {
+			return "login";
+		}
 	}
 
 	@RequestMapping(value = "/user/login", method = RequestMethod.POST)
