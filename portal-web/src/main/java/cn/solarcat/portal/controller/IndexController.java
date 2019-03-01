@@ -19,11 +19,14 @@ public class IndexController {
 	@Reference(timeout = 600000)
 	private ContentService contentService;
 	private Long CONTENT_LUNBO_ID = 89L;
+	private Long CONTENT_SHANGXIN_ID = 108L;
 
 	@RequestMapping("/index")
 	public String showIndex(HttpServletRequest request, Model model) {
 		List<TbContent> ad1List = contentService.getContentListByCid(CONTENT_LUNBO_ID);
+		List<TbContent> ad2List = contentService.getContentListByCid(CONTENT_SHANGXIN_ID);
 		model.addAttribute("items", ad1List);
+		model.addAttribute("pros", ad2List);
 		if (JudgeFunction.JudgeIsMoblie(request)) {
 			return "index";
 		} else {
