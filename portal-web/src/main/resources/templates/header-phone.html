@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" data-th-fragment="headermobile">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" data-th-fragment="header">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <body>
 	<header>
@@ -10,23 +10,16 @@
 		<div class="header-top-area bg-gray text-center text-md-left">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6 col-md-5">
-						<div class="header-call-action">
-							<i class="fa fa-envelope"></i> info@website.com
-							<a></a>
-							<i class="fa fa-phone"></i> 0123456789
-							<a></a>
-						</div>
-					</div>
+					<div class="col-lg-6 col-md-5"></div>
 					<div class="col-lg-6 col-md-7">
 						<div class="header-top-right float-md-right float-none">
 							<nav>
 								<ul>
 									<li id="loginbar" style="margin-right: 15px;">
-										<a href="http://sso.view.solarcat.cn/login-register">请登录</a>
+										<a href="http://sso.view.solarcat.cn/login">请登录</a>
 									</li>
 									<li>
-										<a href="http://sso.view.solarcat.cn/login-register">免费注册</a>
+										<a href="http://sso.view.solarcat.cn/register">免费注册</a>
 									</li>
 									<li>
 										<div class="dropdown header-top-dropdown">
@@ -99,10 +92,12 @@
 							</div>
 							<div class="header-middle-block">
 								<div class="header-middle-searchbox">
-									<input type="text" placeholder="搜索商品">
-									<button class="search-btn">
+									<form action="http://search.view.solarcat.cn/search" id="searchForm" name="query" method="GET">
+										<input type="text" class="text keyword ac_input" name="keyword" id="keyword" autocomplete="off" placeholder="搜索商品">
+										<button class="search-btn">
 										<i class="fa fa-search"></i>
-									</button>
+										</button>
+									</form>
 								</div>
 								<div class="header-mini-cart">
 									<div class="mini-cart-btn">
@@ -162,7 +157,7 @@
 			</div>
 		</div>
 		<!-- header middle end -->
-<!-- 		<div th:replace="~{mainmenu :: mainmenu}"></div> -->
+		<div th:replace="~{mainmenu :: mainmenu}"></div>
 	</header>
 </body>
 </html>
