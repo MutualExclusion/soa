@@ -11,7 +11,7 @@
 <title>欢迎登陆-solarcat</title>
 <link rel="icon" href="images/solar.ico" type="image/x-icon">
 <!-- Bootstrap CSS -->
-<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
 <!-- Font-Awesome CSS -->
 <link href="css/font-awesome.min.css" rel="stylesheet">
 <!-- Main Style CSS -->
@@ -51,7 +51,7 @@
 						<div class="col-lg-6">
 							<div class="login-reg-form-wrap  pr-lg-50">
 								<h2>登录</h2>
-								<form method="post" id="formlogin">
+								<form method="post" id="formlogin" action="">
 									<div class="single-input-item">
 										<input id="username" name="username" type="text" placeholder="请输入账号/手机号/邮箱" required="">
 									</div>
@@ -82,31 +82,26 @@
 		<!-- login register wrapper end -->
 	</div>
 
-	<!--All jQuery, Third Party Plugins Activation (main.js) Files-->
-	<script src="js/modernizr-3.6.0.min.js" th:src="@{/js/modernizr-3.6.0.min.js}" type="text/javascript"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-	<!-- Popper Min Js -->
-	<script src="js/popper.min.js" th:src="@{/js/popper.min.js}"type="text/javascript"></script>
-	<!-- Bootstrap Min Js -->
-	<script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	<script src="layer/layer.js" th:src="@{/layer/layer.js}"type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" type="text/javascript"></script>
+
+	<script src="layer/layer.js" th:src="@{/layer/layer.js}" type="text/javascript"></script>
 	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
 	<script type="text/javascript">
-	var LOGIN = {
-			checkInput:function() {
-				if(!$("#formlogin #username").val()) {
+		var LOGIN = {
+			checkInput : function() {
+				if (!$("#formlogin #username").val()) {
 					return false;
 				}
-				if(!$("#formlogin input[name='password']").val()) {
+				if (!$("#formlogin input[name='password']").val()) {
 					return false;
 				}
 				return true;
 			},
-			doLogin:function() {
-				$.post("/user/login", $("#formlogin").serialize(),function(data){
+			doLogin : function() {
+				$.post("/user/login", $("#formlogin").serialize(), function(
+						data) {
 					if (data.status == 200) {
-						layer.alert('登录成功！',"提示", function(){
+						layer.alert('登录成功！', "提示", function() {
 							location.href = "http://view.solarcat.cn/index";
 						});
 
@@ -115,21 +110,18 @@
 					}
 				});
 			},
-			login:function() {
+			login : function() {
 				if (this.checkInput()) {
 					this.doLogin();
 				}
 			}
 
-	};
-	$(function(){
-		$("#login_sub").click(function(){
-			LOGIN.login();
+		};
+		$(function() {
+			$("#login_sub").click(function() {
+				LOGIN.login();
+			});
 		});
-	});
 	</script>
-	
-
 </body>
-
 </html>
