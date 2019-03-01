@@ -43,8 +43,8 @@
 		                            <div class="slider-main-content">
 		                                <div class="slider-text">
 		                                    <h2></h2>
-		                                    <h1>woman</h1>
-		                                    <h5>for less than $199.00</h5>
+		                                    <h1>只要你乖，给你买gai</h1>
+		                                    <h1>你要不乖。头给你打歪</h1>
 		                                </div>
 		                            </div>
 		                        </div>
@@ -53,9 +53,7 @@
 		                        <div class="container">
 		                            <div class="slider-main-content">
 		                                <div class="slider-text">
-		                                    <h2>shopping bag</h2>
-		                                    <h4>fashion collection 2018</h4>
-		                                    <p>for less than $199.00</p>
+		                                <h1>无人信高洁，谁为表予心？</h1>
 		                                </div>
 		                            </div>
 		                        </div>
@@ -112,40 +110,34 @@
                             <!-- testimonial area start -->
                             <div class="main-sidebar testimonial-area pb-sm-70">
                                 <div class="section-title-2 mb-28">
-                                    <h3>Clients Say</h3>
+                                    <h3>表白墙</h3>
                                 </div> <!-- section title end -->
                                 <div class="testimonial-carousel-active slick-dot-style">
                                     <div class="testimonial-item text-center">
                                         <div class="testimonial-thumb">
-                                            <img src="/image/testimonial/team_member1.jpg" alt="">
+                                            <img src="/images/team_member1.jpg" alt="">
                                         </div>
                                         <div class="testimonial-content">
-                                            <h3><a href="#">Elizabeth Taylor</a></h3>
-                                            <p>Etiam rhoncus congue arcu sed interdum. Cras dolor diam, accumsan eu
-                                                aliquam eu, luctus vehicula velit. Nam eget tortor ut felis fermentum
-                                                sodales ac eu lacus</p>
+                                            <h3><a href="#">肯不起</a></h3>
+                                            <p>由近50名设计师、工程师、科学家（包括天体物理学家在内）、建筑师及其他专业人员组成的团队，耗时三个月，构思、创作并建造了这一世界上最大的标识。这就是由65000块1平方英尺的彩色瓷砖拼装而成的太空可视肯德基标识。受到全球消费者的欢迎。</p>
                                         </div>
                                     </div> <!-- end single testimonial item -->
                                     <div class="testimonial-item text-center">
                                         <div class="testimonial-thumb">
-                                            <img src="/image/testimonial/team_member2.jpg" alt="">
+                                            <img src="/images/team_member2.jpg" alt="">
                                         </div>
                                         <div class="testimonial-content">
-                                            <h3><a href="#">Elizabeth Taylor</a></h3>
-                                            <p>Etiam rhoncus congue arcu sed interdum. Cras dolor diam, accumsan eu
-                                                aliquam eu, luctus vehicula velit. Nam eget tortor ut felis fermentum
-                                                sodales ac eu lacus</p>
+                                            <h3><a href="#">麦当拿</a></h3>
+                                            <p>麦当劳的黄金准则是“顾客至上，顾客永远第一”。提供服务的最高标准是质量（Quality）、服务（Service）、清洁（Cleanliness）和价值（Value），即QSC&V原则。这是最能体现麦当劳特色的重要原则。</p>
                                         </div>
                                     </div> <!-- end single testimonial item -->
                                     <div class="testimonial-item text-center">
                                         <div class="testimonial-thumb">
-                                            <img src="/image/testimonial/team_member3.jpg" alt="">
+                                            <img src="/images/team_member3.jpg" alt="">
                                         </div>
                                         <div class="testimonial-content">
-                                            <h3><a href="#">Elizabeth Taylor</a></h3>
-                                            <p>Etiam rhoncus congue arcu sed interdum. Cras dolor diam, accumsan eu
-                                                aliquam eu, luctus vehicula velit. Nam eget tortor ut felis fermentum
-                                                sodales ac eu lacus</p>
+                                            <h3><a href="#">买切糕</a></h3>
+                                            <p>切糕是玛仁糖在新疆外地区民众在不知道名称的情况下根据贩卖时的特点所赋予的名称，是一种新疆维吾尔族民众采用传统特色工艺，选用核桃仁、玉米饴、葡萄干、葡萄汁、芝麻、玫瑰花、巴丹杏、枣等原料熬制而成的民族特色食品。</p>
                                         </div>
                                     </div> <!-- end single testimonial item -->
                                 </div>
@@ -164,14 +156,14 @@
                                 <div class="col-lg-7 col-md-7">
                                     <div class="img-container fix img-full mb-sm-30">
                                         <a href="#">
-                                            <img src="/image/banner/banner_static2.jpg" alt="">
+                                            <img src="/images/banner_static2.jpg" alt="">
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-5 col-md-5">
                                     <div class="img-container fix img-full mb-sm-30">
                                         <a href="#">
-                                            <img src="/image/banner/banner_static3.jpg" alt="">
+                                            <img src="/images/banner_static3.jpg" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -190,115 +182,7 @@
                                             <div class="category-append"></div>
                                         </div> <!-- section title end -->
                                         <div class="category-carousel-active row" data-row="4">
-                                            <div class="col" th:each="item:${pros}">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a th:href="${item.url}">
-                                                            <img th:src="${item.pic}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a th:href="${item.url}" th:text="${item.title}"></a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price" th:text="'￥'+${item.titleDesc}">
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del></del>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img2.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">grouped Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $100.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del></del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img3.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">simple Product 05</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $155.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$160.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img4.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">demandable Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $210.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$240.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
+                                            <div th:replace="~{new-pros :: new-pros}" th:with="${pros}"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -311,246 +195,7 @@
                                             <div class="category-append"></div>
                                         </div> <!-- section title end -->
                                         <div class="category-carousel-active row" data-row="4">
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img14.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">simple Product 06</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $190.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$210.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img13.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">affiliate Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $45.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$650.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img12.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">grouped Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $120.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$170.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img10.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">Virtual Product 01</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $180.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del></del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img9.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">external Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $150.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$180.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img8.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">Virtual Product 01</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $150.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$180.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img6.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">download Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $150.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$180.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img5.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">Virtual Product 01</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $150.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$180.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
+                                           <div th:replace="~{new-pros :: new-pros}" th:with="${pros}"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -563,246 +208,7 @@
                                             <div class="category-append"></div>
                                         </div> <!-- section title end -->
                                         <div class="category-carousel-active row" data-row="4">
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img6.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">Virtual Product 01</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $120.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$150.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img15.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">grouped Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $160.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del></del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img11.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">download Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $140.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$160.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img16.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">simple Product 01</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $80.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$100.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img15.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">affiliate Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $120.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del></del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img1.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">external Product</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $130.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$140.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img13.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">Virtual Product 01</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $150.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$180.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
-                                            <div class="col">
-                                                <div class="category-item">
-                                                    <div class="category-thumb">
-                                                        <a href="product-details.html">
-                                                            <img src="/images/product-img3.jpg" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="category-content">
-                                                        <h4><a href="product-details.html">variable Product 01</a></h4>
-                                                        <div class="price-box">
-                                                            <div class="regular-price">
-                                                                $70.00
-                                                            </div>
-                                                            <div class="old-price">
-                                                                <del>$90.00</del>
-                                                            </div>
-                                                        </div>
-                                                        <div class="ratings">
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span class="good"><i class="fa fa-star"></i></span>
-                                                            <span><i class="fa fa-star"></i></span>
-                                                            <div class="pro-review">
-                                                                <span>1 review(s)</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div> <!-- end single item -->
-                                            </div> <!-- end single item column -->
+                                        	<div th:replace="~{new-pros :: new-pros}" th:with="${pros}"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -1159,10 +565,6 @@
     </div>
     <!-- Scroll to Top End -->
 
-
-
-    <!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
-    <script src="/js/modernizr-3.6.0.min.js"></script>
     <!-- Jquery Min Js -->
     <script src="/js/jquery-3.3.1.min.js"></script>
     <!-- Popper Min Js -->
@@ -1171,13 +573,11 @@
     <script src="/js/bootstrap.min.js"></script>
     <!-- Plugins Js-->
     <script src="/js/plugins.js"></script>
-    <!-- Ajax Mail Js -->
-    <script src="/js/ajax-mail.js"></script>
     <!-- Active Js -->
     <script src="/js/main.js"></script>
     <!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
     <script src="layer/layer.js" th:src="@{/layer/layer.js}" type="text/javascript"></script>
-    <script src="/js/solar_token.js" type="text/javascript"></script>
+    <script src="/js/solar_token.js"></script>
 	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
 </body>
 

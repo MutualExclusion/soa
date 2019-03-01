@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" data-th-fragment="new-pros">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+</head>
+<body>
+	<div class="col" th:each="item:${pros}">
+		<div class="category-item">
+			<div class="category-thumb">
+				<a th:href="${item.url}">
+					<img th:src="${item.pic}" alt="${item.title}" src="">
+				</a>
+			</div>
+			<div class="category-content">
+				<h4>
+					<a th:href="${item.url}" th:text="${item.title}"></a>
+				</h4>
+				<div class="price-box">
+					<div class="regular-price" th:text="'￥'+${item.titleDesc}"></div>
+					<div class="old-price">
+						<del></del>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end single item -->
+	</div>
+	<!-- end single item column -->
+</body>
+</html>

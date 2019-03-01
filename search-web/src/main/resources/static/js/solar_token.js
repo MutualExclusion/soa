@@ -1,6 +1,6 @@
 var SOLAR = {
 	checkLogin : function(){
-		var _ticket = $.cookie("token");
+		var _ticket = this.getToken();
 		if(!_ticket){
 			return ;
 		}
@@ -16,7 +16,20 @@ var SOLAR = {
 				}
 			}
 		});
+	},
+	getToken:function(){
+	    var strcookie = document.cookie;//获取cookie字符串
+	    var arrcookie = strcookie.split("; ");//分割
+	    //遍历匹配
+	    for ( var i = 0; i < arrcookie.length; i++) {
+	        var arr = arrcookie[i].split("=");
+	        if (arr[0] == "token"){
+	            return arr[1];
+	        }
+	    }
+	    return "";
 	}
+
 }
 
 $(function(){
