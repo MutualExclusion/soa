@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
@@ -20,6 +21,7 @@ public class SearchController {
 	private Integer SEARCH_RESULT_ROWS = 32;
 
 	@RequestMapping("/search")
+	@ResponseBody
 	public String searchItemList(HttpServletRequest request, String keyword,
 			@RequestParam(defaultValue = "1") Integer page, Model model) throws Exception {
 		SearchResult searchResult = searchService.search(keyword, page, SEARCH_RESULT_ROWS);
