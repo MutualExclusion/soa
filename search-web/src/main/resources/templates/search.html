@@ -2,416 +2,367 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="meta description">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="meta description">
 
-    <!-- Site title -->
-    <title>solarcat网上商城</title>
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="/images/solar.ico" type="image/x-icon" />
-    <!-- Bootstrap CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font-Awesome CSS -->
-    <link href="/css/font-awesome.min.css" rel="stylesheet">
-    <!-- helper class css -->
-    <link href="/css/helper.min.css" rel="stylesheet">
-    <!-- Plugins CSS -->
-    <link href="/css/plugins.css" rel="stylesheet">
-    <!-- Main Style CSS -->
-    <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/skin-default.css" rel="stylesheet" id="galio-skin">
+<!-- Site title -->
+<title>solarcat网上商城</title>
+<!-- Favicon -->
+<link rel="shortcut icon" href="/images/solar.ico" type="image/x-icon" />
+<!-- Bootstrap CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font-Awesome CSS -->
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<!-- helper class css -->
+<link href="/css/helper.min.css" rel="stylesheet">
+<!-- Plugins CSS -->
+<link href="/css/plugins.css" rel="stylesheet">
+<!-- Main Style CSS -->
+<link href="/css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <div class="wrapper">
+	<div class="wrapper">
 
-        <!-- header area start -->
-        <div th:insert="~{header :: header}"></div>
-        <!-- header area end -->
+		<!-- header area start -->
+		<div th:insert="~{header :: header}"></div>
+		<!-- header area end -->
 
-        <!-- page wrapper start -->
-        <div class="page-wrapper pt-6 pb-28 pb-md-6 pb-sm-6 pt-xs-36">
-            <div class="container">
-                <div class="row">
-                    <!-- start home sidebar -->
-                    <div class="col-lg-3">
-                        <div class="home-sidebar">
-                            <!-- hot deals area start -->
-                            <div class="main-sidebar hot-deals-wrap mb-30">
-                                <div class="section-title-2 d-flex justify-content-between mb-28">
-                                    <h3>hot deals</h3>
-                                    <div class="slick-append"></div>
-                                </div> <!-- section title end -->
-                                <div class="deals-carousel-active slick-padding slick-arrow-style">
-                                    <!-- product single item start -->
-                                    <div class="product-item fix">
-                                        <div class="product-thumb">
-                                            <a href="product-details.html">
-                                                <img src="/images/product-img7.jpg" class="img-pri" alt="">
-                                                <img src="/images/product-img13.jpg" class="img-sec" alt="">
-                                            </a>
-                                            <div class="product-label">
-                                                <span>hot</span>
-                                            </div>
-                                            <div class="product-action-link">
-                                                <a href="#" data-toggle="modal" data-target="#quick_view"> <span
-                                                        data-toggle="tooltip" data-placement="left" title="Quick view"><i
-                                                            class="fa fa-search"></i></span> </a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
-                                                        class="fa fa-heart-o"></i></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Compare"><i
-                                                        class="fa fa-refresh"></i></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to cart"><i
-                                                        class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4><a href="product-details.html">vertual product 01</a></h4>
-                                            <div class="pricebox">
-                                                <span class="regular-price">$70.00</span>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span><i class="fa fa-star"></i></span>
-                                                    <div class="pro-review">
-                                                        <span>1 review(s)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- product single item end -->
-                                    <!-- product single item start -->
-                                    <div class="product-item fix">
-                                        <div class="product-thumb">
-                                            <a href="product-details.html">
-                                                <img src="/images/product-img3.jpg" class="img-pri" alt="">
-                                                <img src="/images/product-img4.jpg" class="img-sec" alt="">
-                                            </a>
-                                            <div class="product-label">
-                                                <span>hot</span>
-                                            </div>
-                                            <div class="product-action-link">
-                                                <a href="#" data-toggle="modal" data-target="#quick_view"> <span
-                                                        data-toggle="tooltip" data-placement="left" title="Quick view"><i
-                                                            class="fa fa-search"></i></span> </a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
-                                                        class="fa fa-heart-o"></i></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Compare"><i
-                                                        class="fa fa-refresh"></i></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to cart"><i
-                                                        class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4><a href="product-details.html">vertual product 01</a></h4>
-                                            <div class="pricebox">
-                                                <span class="regular-price">$70.00</span>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span><i class="fa fa-star"></i></span>
-                                                    <div class="pro-review">
-                                                        <span>1 review(s)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- product single item end -->
-                                    <!-- product single item start -->
-                                    <div class="product-item fix">
-                                        <div class="product-thumb">
-                                            <a href="product-details.html">
-                                                <img src="/images/product-img5.jpg" class="img-pri" alt="">
-                                                <img src="/images/product-img1.jpg" class="img-sec" alt="">
-                                            </a>
-                                            <div class="product-label">
-                                                <span>hot</span>
-                                            </div>
-                                            <div class="product-action-link">
-                                                <a href="#" data-toggle="modal" data-target="#quick_view"> <span
-                                                        data-toggle="tooltip" data-placement="left" title="Quick view"><i
-                                                            class="fa fa-search"></i></span> </a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Wishlist"><i
-                                                        class="fa fa-heart-o"></i></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Compare"><i
-                                                        class="fa fa-refresh"></i></a>
-                                                <a href="#" data-toggle="tooltip" data-placement="left" title="Add to cart"><i
-                                                        class="fa fa-shopping-cart"></i></a>
-                                            </div>
-                                        </div>
-                                        <div class="product-content">
-                                            <h4><a href="product-details.html">vertual product 01</a></h4>
-                                            <div class="pricebox">
-                                                <span class="regular-price">$70.00</span>
-                                                <div class="ratings">
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span class="good"><i class="fa fa-star"></i></span>
-                                                    <span><i class="fa fa-star"></i></span>
-                                                    <div class="pro-review">
-                                                        <span>1 review(s)</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- product single item end -->
-                                </div>
-                            </div>
-                            <!-- hot deals area end -->
+		<!-- breadcrumb area start -->
+		<div class="breadcrumb-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="breadcrumb-wrap">
+							<nav aria-label="breadcrumb">
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item">
+										<a href="http://view.solarcat.cn/index">首页</a>
+									</li>
+									<li class="breadcrumb-item active" aria-current="page">
+										找到和“
+										<span th:text="${query}"></span>
+										”相关商品共
+										<span th:text="${recordCount }"></span>
+										件
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- breadcrumb area end -->
 
-                            <!-- testimonial area start -->
-                            <div class="main-sidebar testimonial-area pb-sm-70">
-                                <div class="section-title-2 mb-28">
-                                    <h3>Clients Say</h3>
-                                </div> <!-- section title end -->
-                                <div class="testimonial-carousel-active slick-dot-style">
-                                    <div class="testimonial-item text-center">
-                                        <div class="testimonial-thumb">
-                                            <img src="/image/testimonial/team_member1.jpg" alt="">
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <h3><a href="#">Elizabeth Taylor</a></h3>
-                                            <p>Etiam rhoncus congue arcu sed interdum. Cras dolor diam, accumsan eu
-                                                aliquam eu, luctus vehicula velit. Nam eget tortor ut felis fermentum
-                                                sodales ac eu lacus</p>
-                                        </div>
-                                    </div> <!-- end single testimonial item -->
-                                    <div class="testimonial-item text-center">
-                                        <div class="testimonial-thumb">
-                                            <img src="/image/testimonial/team_member2.jpg" alt="">
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <h3><a href="#">Elizabeth Taylor</a></h3>
-                                            <p>Etiam rhoncus congue arcu sed interdum. Cras dolor diam, accumsan eu
-                                                aliquam eu, luctus vehicula velit. Nam eget tortor ut felis fermentum
-                                                sodales ac eu lacus</p>
-                                        </div>
-                                    </div> <!-- end single testimonial item -->
-                                    <div class="testimonial-item text-center">
-                                        <div class="testimonial-thumb">
-                                            <img src="/image/testimonial/team_member3.jpg" alt="">
-                                        </div>
-                                        <div class="testimonial-content">
-                                            <h3><a href="#">Elizabeth Taylor</a></h3>
-                                            <p>Etiam rhoncus congue arcu sed interdum. Cras dolor diam, accumsan eu
-                                                aliquam eu, luctus vehicula velit. Nam eget tortor ut felis fermentum
-                                                sodales ac eu lacus</p>
-                                        </div>
-                                    </div> <!-- end single testimonial item -->
-                                </div>
-                            </div>
-                            <!-- testimonial area end -->
+		<!-- page wrapper start -->
+		<div class="page-main-wrapper">
+			<div class="container">
+				<div class="row">
+					<!-- sidebar start -->
+					<div class="col-lg-3 order-2 order-lg-1">
+						<div class="shop-sidebar-wrap mt-md-28 mt-sm-28">
+							<!-- manufacturer start -->
+							<div class="sidebar-widget mb-30">
+								<div class="sidebar-title mb-10">
+									<h3>通过分类继续查找</h3>
+								</div>
+								<div class="sidebar-widget-body">
+									<ul>
+										<li>
+											<i class="fa fa-angle-right"></i>
+											<a href="#">像极了爱情</a>
+										</li>
+										<li>
+											<i class="fa fa-angle-right"></i>
+											<a href="#">像灿烂的烟火</a>
+										</li>
+										<li>
+											<i class="fa fa-angle-right"></i>
+											<a href="#">嘣——的一声</a>
+										</li>
+										<li>
+											<i class="fa fa-angle-right"></i>
+											<a href="#">你的前女友就炸了</a>
+										</li>
+										<li>
+											<i class="fa fa-angle-right"></i>
+											<a href="#">你看，这像不像你奶奶个腿</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- manufacturer end -->
 
-                        </div>
-                    </div>
-                    <!-- end home sidebar -->
+							<!-- product tag start -->
+							<div class="sidebar-widget mb-30">
+								<div class="sidebar-title mb-10">
+									<h3>添加标签</h3>
+								</div>
+								<div class="sidebar-widget-body">
+									<div class="product-tag">
+										<a href="#">照相机</a>
+										<a href="#">计算机</a>
+										<a href="#">手表</a>
+										<a href="#">移动手机</a>
+									</div>
+								</div>
+							</div>
+							<!-- product tag end -->
 
-                    <div class="col-lg-9">
-						<!-- latest product start -->
-				        <div class="latest-product">
-				            <div class="container">
-				                <div class="section-title mb-30">
-										<div class="breadcrumb-wrap">
-											<nav aria-label="breadcrumb">
-												<ul class="breadcrumb">
-													<li class="breadcrumb-item">
-														<a href="http://view.solarcat.cn/index">首页</a>
-													</li>
-													<li class="breadcrumb-item active" aria-current="page">找到和“<span th:text="${query}"></span>”相关商品共<span th:text="${recourdCount }"></span>件</li>
-													<li><p th:text="${page }+'/'+${totalPages }"></p></li>
-													<li>
-														<a th:href="'http://search.view.solarcat.cn/search?keyword='+${query}+'&page='+${page-1}">
-															<i class="fa fa-angle-left"></i>
-														</a>
-														<a th:href="'http://search.view.solarcat.cn/search?keyword='+${query}+'&page='+${page+1}">
-															<i class="fa fa-angle-right"></i>
-														</a>
-													</li>
-												</ul>
-											</nav>
+							<!-- sidebar banner start -->
+							<div class="sidebar-widget mb-30">
+								<div class="img-container fix img-full">
+									<a href="#">
+										<img src="assets/img/banner/banner_shop.jpg" alt="">
+									</a>
+								</div>
+							</div>
+							<!-- sidebar banner end -->
+						</div>
+					</div>
+					<!-- sidebar end -->
+
+					<!-- product main wrap start -->
+					<div class="col-lg-9 order-1 order-lg-2">
+						<div class="shop-banner img-full">
+							<img src="assets/img/banner/banner_static1.jpg" alt="">
+						</div>
+						<!-- product view wrapper area start -->
+						<div class="shop-product-wrapper pt-34">
+							<!-- shop product top wrap start -->
+							<div class="shop-top-bar">
+								<div class="row">
+									<div class="col-lg-7 col-md-6">
+										<div class="top-bar-left">
+											<div class="product-view-mode mr-70 mr-sm-0">
+												<a class="active" href="#" data-target="grid">
+													<i class="fa fa-th"></i>
+												</a>
+												<a href="#" data-target="list">
+													<i class="fa fa-list"></i>
+												</a>
+											</div>
 										</div>
-				                </div> <!-- section title end -->
-				                <!-- featured category start -->
-				                <div class="slick-padding slick-arrow-style row">
-				                    <!-- product single item start -->
-				                    <div class="product-item fix col-3" th:each="item:${itemList}">
-				                        <div class="product-thumb">
-				                            <a th:href="'http://item.solarcat.cn/item/'+${item.id}">
-				                                <img th:src="${item.images[0]}" class="img-pri">
-				                            </a>
-				                            <div class="product-label">
-				                                <span>热卖</span>
-				                            </div>
-				                            <div class="product-action-link">
-				                                <a href="#" data-toggle="modal" data-target="#quick_view"> <span data-toggle="tooltip"
-				                                        data-placement="left" title="查看"><i class="fa fa-search"></i></span>
-				                                </a>
-				                                <a href="#" data-toggle="tooltip" data-placement="left" title="添加到愿望清单"><i class="fa fa-heart-o"></i></a>
-				                                <a href="#" data-toggle="tooltip" data-placement="left" title="刷新"><i class="fa fa-refresh"></i></a>
-				                                <a href="#" data-toggle="tooltip" data-placement="left" title="加入购物车"><i class="fa fa-shopping-cart"></i></a>
-				                            </div>
-				                        </div>
-				                        <div class="product-content">
-				                            <h4><a th:href="'http://item.solarcat.cn/item/'+${item.id}"><P TH:UTEXT="${item.title}"></P></a></h4>
-				                            <div class="pricebox">
-				                                <span class="regular-price">
-				                                	<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" th:text="'￥'+${item.price/100}"/>
-				                                </span>
-				                                <div class="ratings">
-				                                    <span class="good"><i class="fa fa-star"></i></span>
-				                                    <span class="good"><i class="fa fa-star"></i></span>
-				                                    <span class="good"><i class="fa fa-star"></i></span>
-				                                    <span class="good"><i class="fa fa-star"></i></span>
-				                                    <span><i class="fa fa-star"></i></span>
-				                                    <div class="pro-review">
-				                                        <span>1 review(s)</span>
-				                                    </div>
-				                                </div>
-				                            </div>
-				                        </div>
-				                    </div>
-				                    <!-- product single item end -->
-				                </div>
-				                <!-- featured category end -->
-				            </div>
-				        </div>
-				        <!-- latest product end -->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- page wrapper end -->
+									</div>
+									<div class="col-lg-5 col-md-6">
+										<div class="top-bar-right">
+											<div class="product-short">
+												<p>假装排个序:</p>
+												<select class="nice-select" name="sortby">
+													<option value="trending">网站大部分功能都不好使</option>
+													<option value="sales">别他妈的瞎按</option>
+													<option value="sales">摁坏了奶奶个腿的赔钱</option>
+												</select>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- shop product top wrap start -->
 
-        <!-- footer area start -->
-        <div th:insert="~{footer :: footer}"></div>
-        <!-- footer area end -->
+							<!-- product item start -->
+							<div class="shop-product-wrap grid row">
+								<div class="col-lg-3 col-md-4 col-sm-6" th:each="item:${itemList}">
+									<!-- product single grid item start -->
+									<div class="product-item fix mb-30">
+										<div class="product-thumb">
+											<a href="product-details.html">
+												<a th:href="'http://item.solarcat.cn/item/'+${item.id}">
+													<img th:src="${item.images[0]}" class="img-pri" src="" alt="">
+												</a>
+											</a>
+											<div class="product-label">
+												<span>hot</span>
+											</div>
+											<div class="product-action-link">
+												<a href="#" data-toggle="modal" data-target="#quick_view">
+													<span data-toggle="tooltip" data-placement="left" title="查看">
+														<i class="fa fa-search"></i>
+													</span>
+												</a>
+												<a href="#" data-toggle="tooltip" data-placement="left" title="添加到愿望清单">
+													<i class="fa fa-heart-o"></i>
+												</a>
+												<a href="#" data-toggle="tooltip" data-placement="left" title="刷新">
+													<i class="fa fa-refresh"></i>
+												</a>
+												<a href="#" data-toggle="tooltip" data-placement="left" title="加入购物车">
+													<i class="fa fa-shopping-cart"></i>
+												</a>
+											</div>
+										</div>
+										<div class="product-content">
+											<h4>
+												<a th:href="'http://item.solarcat.cn/item/'+${item.id}">
+													<p th:utext="${item.title}"></p>
+												</a>
+											</h4>
+											<div class="pricebox">
+												<span class="regular-price">
+													<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" th:text="'￥'+${item.price/100}" />
+												</span>
+												<div class="ratings">
+													<span class="good">
+														<i class="fa fa-star"></i>
+													</span>
+													<span class="good">
+														<i class="fa fa-star"></i>
+													</span>
+													<span class="good">
+														<i class="fa fa-star"></i>
+													</span>
+													<span class="good">
+														<i class="fa fa-star"></i>
+													</span>
+													<span>
+														<i class="fa fa-star"></i>
+													</span>
+													<div class="pro-review">
+														<span>1 review(s)</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!-- product single grid item end -->
 
-    </div>
+										<!-- product single list item start -->
+										<div class="product-list-item mb-30">
+											<div class="product-thumb">
+												<a href="product-details.html">
+													<a th:href="'http://item.solarcat.cn/item/'+${item.id}">
+														<img th:src="${item.images[0]}" class="img-pri" src="" alt="">
+													</a>
+												</a>
+												<div class="product-label">
+													<span>hot</span>
+												</div>
+											</div>
+											<div class="product-list-content">
+												<h3>
+												<a th:href="'http://item.solarcat.cn/item/'+${item.id}">
+													<p th:utext="${item.title}"></p>
+												</a>
+												</h3>
+												<div class="pricebox">
+													<div class="ratings">
+														<span class="good">
+															<i class="fa fa-star"></i>
+														</span>
+														<span class="good">
+															<i class="fa fa-star"></i>
+														</span>
+														<span class="good">
+															<i class="fa fa-star"></i>
+														</span>
+														<span class="good">
+															<i class="fa fa-star"></i>
+														</span>
+														<span>
+															<i class="fa fa-star"></i>
+														</span>
+														<div class="pro-review">
+															<span>1 review(s)</span>
+														</div>
+													</div>
+												</div>
+												<div class="pricebox">
+													<span class="regular-price">
+														<fmt:formatNumber groupingUsed="false" maxFractionDigits="2" minFractionDigits="2" th:text="'￥'+${item.price/100}" />
+													</span>
+												</div>
+												<p>网恋么？小妹妹，我有钱，我舔狗</p>
+												<p></p>
+												<div class="product-list-action-link">
+													<a class="buy-btn" href="#" data-toggle="tooltip" data-placement="top" title="Add to cart">
+														加入购物车 <i class="fa fa-shopping-cart"></i>
+													</a>
+													<a href="#" data-toggle="modal" data-target="#quick_view">
+													<span data-toggle="tooltip" data-placement="left" title="查看">
+														<i class="fa fa-search"></i>
+													</span>
+													</a>
+													<a href="#" data-toggle="tooltip" data-placement="left" title="添加到愿望清单">
+														<i class="fa fa-heart-o"></i>
+													</a>
+													<a href="#" data-toggle="tooltip" data-placement="left" title="刷新">
+														<i class="fa fa-refresh"></i>
+													</a>
+												</div>
+											</div>
+										</div>
+										<!-- product single list item start -->
+									</div>
+									<!-- product single column end -->
+								</div>
+								<!-- product item end -->
+							</div>
+							<!-- product view wrapper area end -->
+
+							<!-- start pagination area -->
+							<div class="paginatoin-area text-center pt-28">
+								<div class="row">
+									<div class="col-12">
+										<ul class="pagination-box">
+											<li>
+												<a th:href="'http://search.view.solarcat.cn/search?keyword='+${query}+'&amp;page='+${page-1}">
+													<i class="fa fa-angle-left"></i>
+												</a>
+											</li>
+											<li>
+												<a th:href="'http://search.view.solarcat.cn/search?keyword='+${query}+'&amp;page='+${page+1}">
+													<i class="fa fa-angle-right"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- end pagination area -->
+
+						</div>
+						<!-- product main wrap end -->
+					</div>
+				</div>
+			</div>
+			<!-- page wrapper end -->
+
+			<!-- footer area start -->
+			<div th:insert="~{footer :: footer}"></div>
+			<!-- footer area end -->
+
+		</div>
+
+		<!-- Scroll to top start -->
+		<div class="scroll-top not-visible">
+			<i class="fa fa-angle-up"></i>
+		</div>
+		<!-- Scroll to Top End -->
 
 
-<!--     Quick view modal start -->
-<!--     <div class="modal" id="quick_view"> -->
-<!--         <div class="modal-dialog modal-lg modal-dialog-centered"> -->
-<!--             <div class="modal-content"> -->
-<!--                 <div class="modal-header"> -->
-<!--                     <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-<!--                 </div> -->
-<!--                 <div class="modal-body"> -->
-<!--                     product details inner end -->
-<!--                     <div class="product-details-inner"> -->
-<!--                         <div class="row"> -->
-<!--                             <div class="col-lg-5"> -->
-<!--                                 <div class="product-large-slider slick-arrow-style_2 mb-20"> -->
-<!--                                     <div class="pro-large-img"> -->
-<!--                                         <img src="/images/product-details-img1.jpg" alt="" /> -->
-<!--                                     </div> -->
-<!--                                     <div class="pro-large-img"> -->
-<!--                                         <img src="/images/product-details-img2.jpg" alt="" /> -->
-<!--                                     </div> -->
-<!--                                     <div class="pro-large-img"> -->
-<!--                                         <img src="/images/product-details-img3.jpg" alt="" /> -->
-<!--                                     </div> -->
-<!--                                     <div class="pro-large-img"> -->
-<!--                                         <img src="/images/product-details-img4.jpg" alt="" /> -->
-<!--                                     </div> -->
-<!--                                     <div class="pro-large-img"> -->
-<!--                                         <img src="/images/product-details-img5.jpg" alt="" /> -->
-<!--                                     </div> -->
-<!--                                 </div> -->
-<!--                                 <div class="pro-nav slick-padding2 slick-arrow-style_2"> -->
-<!--                                     <div class="pro-nav-thumb"><img src="/images/product-details-img1.jpg" -->
-<!--                                             alt="" /></div> -->
-<!--                                     <div class="pro-nav-thumb"><img src="/images/product-details-img2.jpg" -->
-<!--                                             alt="" /></div> -->
-<!--                                     <div class="pro-nav-thumb"><img src="/images/product-details-img3.jpg" -->
-<!--                                             alt="" /></div> -->
-<!--                                     <div class="pro-nav-thumb"><img src="/images/product-details-img4.jpg" -->
-<!--                                             alt="" /></div> -->
-<!--                                     <div class="pro-nav-thumb"><img src="/images/product-details-img5.jpg" -->
-<!--                                             alt="" /></div> -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                             <div class="col-lg-7"> -->
-<!--                                 <div class="product-details-des mt-md-34 mt-sm-34"> -->
-<!--                                     <h3><a href="product-details.html">external product 12</a></h3> -->
-<!--                                     <div class="ratings"> -->
-<!--                                         <span class="good"><i class="fa fa-star"></i></span> -->
-<!--                                         <span class="good"><i class="fa fa-star"></i></span> -->
-<!--                                         <span class="good"><i class="fa fa-star"></i></span> -->
-<!--                                         <span class="good"><i class="fa fa-star"></i></span> -->
-<!--                                         <span><i class="fa fa-star"></i></span> -->
-<!--                                         <div class="pro-review"> -->
-<!--                                             <span>1 review(s)</span> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                     <div class="availability mt-10"> -->
-<!--                                         <h5>Availability:</h5> -->
-<!--                                         <span>1 in stock</span> -->
-<!--                                     </div> -->
-<!--                                     <div class="pricebox"> -->
-<!--                                         <span class="regular-price">$160.00</span> -->
-<!--                                     </div> -->
-<!--                                     <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod -->
-<!--                                         tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.<br> -->
-<!--                                         Phasellus id nisi quis justo tempus mollis sed et dui. In hac habitasse platea -->
-<!--                                         dictumst. Suspendisse ultrices mauris diam. Nullam sed aliquet elit. Mauris -->
-<!--                                         consequat nisi ut mauris efficitur lacinia.</p> -->
-<!--                                     <div class="quantity-cart-box d-flex align-items-center mt-20"> -->
-<!--                                         <div class="quantity"> -->
-<!--                                             <div class="pro-qty"><input type="text" value="1"></div> -->
-<!--                                         </div> -->
-<!--                                         <div class="action_link"> -->
-<!--                                             <a class="buy-btn" href="#">add to cart<i class="fa fa-shopping-cart"></i> -->
-<!--                                             </a> -->
-<!--                                         </div> -->
-<!--                                     </div> -->
-<!--                                 </div> -->
-<!--                             </div> -->
-<!--                         </div> -->
-<!--                     </div> -->
-<!--                     product details inner end -->
-<!--                 </div> -->
-<!--             </div> -->
-<!--         </div> -->
-<!--     </div> -->
-<!--     Quick view modal end -->
 
-    <!-- Scroll to top start -->
-    <div class="scroll-top not-visible">
-        <i class="fa fa-angle-up"></i>
-    </div>
-    <!-- Scroll to Top End -->
-
-
-
-    <!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
-    <script src="/js/modernizr-3.6.0.min.js"></script>
-    <!-- Jquery Min Js -->
-    <script src="/js/jquery-3.3.1.min.js"></script>
-    <!-- Popper Min Js -->
-    <script src="/js/popper.min.js"></script>
-    <!-- Bootstrap Min Js -->
-    <script src="/js/bootstrap.min.js"></script>
-    <!-- Plugins Js-->
-    <script src="/js/plugins.js"></script>
-    <!-- Ajax Mail Js -->
-    <script src="/js/ajax-mail.js"></script>
-    <!-- Active Js -->
-    <script src="/js/main.js"></script>
-    <!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
-    <script src="layer/layer.js" th:src="@{/layer/layer.js}" type="text/javascript"></script>
-	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+		<!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
+		<script src="/js/modernizr-3.6.0.min.js" type="text/javascript"></script>
+		<!-- Jquery Min Js -->
+		<script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script>
+		<!-- Popper Min Js -->
+		<script src="/js/popper.min.js" type="text/javascript"></script>
+		<!-- Bootstrap Min Js -->
+		<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+		<!-- Plugins Js-->
+		<script src="/js/plugins.js" type="text/javascript"></script>
+		<!-- Ajax Mail Js -->
+		<script src="/js/ajax-mail.js" type="text/javascript"></script>
+		<!-- Active Js -->
+		<script src="/js/main.js" type="text/javascript"></script>
+		<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+		<script src="layer/layer.js" th:src="@{/layer/layer.js}" type="text/javascript"></script>
+		<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+	</div>
 </body>
 
 </html>
