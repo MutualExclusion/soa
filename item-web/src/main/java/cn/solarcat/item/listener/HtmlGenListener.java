@@ -18,6 +18,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import com.alibaba.dubbo.config.annotation.Reference;
 
 import cn.solarcat.common.configuration.ActiveMQConfiguration;
+import cn.solarcat.common.configuration.ItemConfiguration;
 import cn.solarcat.item.pojo.Item;
 import cn.solarcat.pojo.TbItem;
 import cn.solarcat.pojo.TbItemDesc;
@@ -44,7 +45,7 @@ public class HtmlGenListener {
 			TextMessage textMessage = (TextMessage) message;
 			String text = textMessage.getText();
 			Long itemId = new Long(text);
-			logger.info("{}", itemId);
+
 			// 等待事务提交
 			Thread.sleep(1000);
 			// 根据商品id查询商品信息，商品基本信息和商品描述。
@@ -60,7 +61,7 @@ public class HtmlGenListener {
 			context.setVariable("itemDesc", itemDesc);
 
 			// 渲染模板
-			FileWriter write = new FileWriter("item.html");
+			FileWriter write = new FileWriter(ItemConfiguration.HTML_GEN_PATH + itemId + ".html");
 			templateEngine.process("example", context, write);
 
 		} catch (Exception e) {
