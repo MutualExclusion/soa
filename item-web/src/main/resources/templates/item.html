@@ -86,9 +86,8 @@
                                             <span>1 in stock</span>
                                         </div>
                                         <div class="pricebox">
-                                            <span class="regular-price" th:text="'￥'+${item.price/100}"></span>
+                                        	<span class="regular-price" th:text="'￥'+${item.price}"></span>
                                         </div>
-                                        <p th:text="${item.sellPoint }"></p>
                                         <div class="quantity-cart-box d-flex align-items-center">
                                             <div class="quantity">
                                                 <div class="pro-qty"><input type="text" value="1"></div>

@@ -62,7 +62,7 @@ public class HtmlGenListener {
 
 			// 渲染模板
 			FileWriter write = new FileWriter(ItemConfiguration.HTML_GEN_PATH + itemId + ".html");
-			templateEngine.process("example", context, write);
+			templateEngine.process("item", context, write);
 
 		} catch (Exception e) {
 			e.printStackTrace();
