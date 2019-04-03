@@ -214,4 +214,12 @@ public class ItemServiceImpl implements ItemService {
 		return SolarCatResult.ok();
 	}
 
+	@Override
+	@Log(action = ACTION.UPDATE, level = LEVEL.SERVICE)
+	public List<TbItem> selectTbItem() {
+		TbItemExample example = new TbItemExample();
+		List<TbItem> list = itemMapper.selectByExample(example);
+		return list;
+	}
+
 }

@@ -1,5 +1,7 @@
 package cn.solarcat.service;
 
+import java.util.List;
+
 import cn.solarcat.common.pojo.EasyUIDataGridResult;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.pojo.TbItem;
@@ -23,4 +25,6 @@ public interface ItemService {
 	SolarCatResult updateReshelf(Long itemId);
 
 	TbItemDesc getTbItemDescById(long itemId);
+
+	List<TbItem> selectTbItem();
 }
