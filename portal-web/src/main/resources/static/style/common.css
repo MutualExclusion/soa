@@ -1,0 +1,327 @@
+/*
+* @Author: 超级无敌可爱的小悦悦
+* @Date:   2019-03-22 13:09:06
+* @Last Modified by:   超级无敌可爱的小悦悦
+* @Last Modified time: 2019-03-31 21:46:06
+*/
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/*header头部*/
+header {
+
+    height: 1.5rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, .2));
+}
+
+/*input搜索样式*/
+.search form {
+    margin: .3rem auto;
+    width: 65%;
+    border: solid 1px #ccc;
+    border-radius: 30px;
+    padding: .1rem;
+    line-height: .4rem;
+    font-size: .4rem;
+    background-color: #fff;
+    opacity: 0.75;
+    position: relative;
+}
+
+.search button {
+    position: absolute;
+    left: .1rem;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: transparent
+}
+
+.search img {
+    width: .5rem;
+    float: left;
+}
+
+input {
+
+    width: 100%;
+    text-align: center;
+
+}
+/*购物车*/
+.shopping_cart{
+    position: absolute;
+    top:.15rem;
+    right: .4rem;
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+/*轮播图样式*/
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+ul {
+    list-style: none;
+}
+
+/*清除浮动*/
+.clearfix::before,
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+.banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.banner ul:first-child {
+    width: 1000%;
+    -webkit-transform: translateX(-10%);
+    transform: translateX(-10%);
+}
+
+.banner ul:first-child li {
+    width: 10%;
+    float: left;
+}
+
+.banner ul:first-child li a {
+    display: block;
+    width: 100%;
+}
+
+.banner ul:first-child li a img {
+    width: 16rem;
+    height: 6.5rem;
+    display: block;
+}
+
+.banner ul:last-child {
+    position: absolute;
+    bottom: 6px;
+    width: 100%;
+    text-align: center;
+}
+
+.banner ul:last-child li {
+    width: 6px;
+    height:6px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.banner ul:last-child li:first-child {
+    margin-left: 0;
+}
+
+.banner ul:last-child li.now {
+    background: #fff;
+}
+
+/**/
+main {
+
+    padding: .5rem .25rem;
+}
+
+.gBox {
+    width: 100%;
+    float: left;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .5);
+    font-size: .5rem;
+
+}
+
+/*分类*/
+nav {
+    text-align: center;
+    padding-bottom: .5rem;
+}
+
+nav li {
+    width: 25%;
+    float: left;
+
+}
+
+nav i {
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-image: url(../images/1.png);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin: .5rem auto .25rem;
+}
+
+/*限时抢购*/
+.flash h5 {
+
+    display: inline-block;
+}
+
+.time_item {
+    display: inline-block;
+    color: red;
+}
+
+
+.flash_sale {
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.flash_sale li {
+    float: left;
+    width: 25%;
+
+}
+
+.flash_sale img {
+    display: block;
+    height: 2.5rem;
+    width: 2.5rem;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin: .5rem auto .25rem;
+}
+
+/*全网低价*/
+.item {
+
+    /* height: 100px;*/
+}
+
+.item_tit {
+    position: relative;
+    padding: .35rem;
+    border-bottom: solid 1px #666;
+}
+
+.item_tit h5 {
+
+    height: .65rem;
+    font-size: .65rem;
+    padding-left: .5rem;
+    border-left: solid 4px #0088cc;
+    line-height: 1;
+    font-weight: normal;
+}
+.item_tit i{
+    position: absolute;
+    right: 1rem;
+    top: .25rem;
+    color: #ccc;
+   
+}
+.yifu {
+
+    height: 8.575rem;
+    position: relative;
+    background-color: #ccc;
+
+}
+
+.big {
+    position: absolute;
+    width: 7.65rem;
+    height: 8.575rem;
+}
+
+.big img {
+    width: 7.65rem;
+    height: 8.575rem;
+}
+
+.small {
+    position: absolute;
+    width: 7.8rem;
+
+}
+
+.small img {
+    width: 7.8rem;
+    height: 4.28rem;
+}
+
+.l {
+    left: 0;
+}
+
+.t {
+    top: 0;
+}
+
+.r {
+    right: 0;
+}
+
+.b {
+    bottom: 0;
+}
+/*手机智能*/
+.summer {
+    width: 100%;
+    height: 16rem;
+    position: relative;
+    background-color: #ccc;
+}
+
+.goods{
+    background-color: #fff;
+    height:7.97rem;
+    width: 7.68rem;
+    position: absolute;
+}
+.price, .goodsname{
+    position: absolute;
+    padding-left: .5rem;
+    font-weight: 700;
+}
+.price{
+    bottom: 0;
+    color: red;
+}
+.goodsname{
+    bottom: .8rem;
+    font-size: .5rem;
+}
+.summer img{
+    height:6.4rem;
+    width: 7.68rem;
+}

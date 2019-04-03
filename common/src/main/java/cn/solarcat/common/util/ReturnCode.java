@@ -16,7 +16,11 @@ public enum ReturnCode {
 	/**
 	 * 数据库删除失败
 	 */
-	C301(301, "数据库删除失败");
+	C301(301, "数据库删除失败"),
+	/**
+	 * 数据库删除失败
+	 */
+	C410(410, "静态页面生成失败");
 	private final int status;
 	private final String message;
 

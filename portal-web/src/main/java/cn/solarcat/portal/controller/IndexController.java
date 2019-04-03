@@ -28,7 +28,7 @@ public class IndexController {
 		model.addAttribute("items", ad1List);
 		model.addAttribute("pros", ad2List);
 		if (JudgeFunction.JudgeIsMoblie(request)) {
-			return "index";
+			return "phone";
 		} else {
 			return "team";
 		}

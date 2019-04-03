@@ -1,8 +1,6 @@
 package cn.solarcat.item.listener;
 
 import java.io.FileWriter;
-import java.util.HashMap;
-import java.util.Map;
 
 import javax.jms.Message;
 import javax.jms.TextMessage;
@@ -54,9 +52,6 @@ public class HtmlGenListener {
 			// 取商品描述
 			TbItemDesc itemDesc = itemService.getTbItemDescById(itemId);
 			// 创建一个数据集，把商品数据封装
-			Map<Object, Object> data = new HashMap<>();
-			data.put("item", item);
-			data.put("itemDesc", itemDesc);
 			context.setVariable("item", item);
 			context.setVariable("itemDesc", itemDesc);
 
@@ -65,6 +60,7 @@ public class HtmlGenListener {
 			templateEngine.process("item", context, write);
 
 		} catch (Exception e) {
+			logger.debug("生成页面出错:商品ID" + message);
 			e.printStackTrace();
 		}
 

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>solarcat网上商城</title>
+    <link rel="stylesheet" href="style/common.css" type="text/css">
+    <link rel="stylesheet" href="style/reset.css" type="text/css">
+    <script src="js/util.js"></script>
+    <script src="js/iconfont.js"></script>
+</head>
+<style>
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>
+<body>
+    <!-- header部分 -->
+    <header>
+        <div class="search">
+            <form>
+                <input type="search" placeholder="请输入您要搜索的内容">
+                <button><svg class="icon" aria-hidden="true"><use xlink:href="#iconsearch"></use></svg> </button>
+            </form>
+        </div>
+        <a href=""> <img src="images/shopping-cart.png" alt="" class="shopping_cart"></a>
+       
+    </header>
+    <!-- 轮播图部分 -->
+    <div class="banner">
+        <ul class="clearfix">
+            <li th:each="item:${items}">
+            	<a href="#" th:href="${item.url}"><img th:alt="${item.title }" th:src="${item.pic }"></a>
+            </li>
+        </ul>
+        <ul class="num">
+            <li class="now"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- 主内容区 -->
+    <main>
+        <!-- 物品分类 -->
+        <nav class="gBox">
+            <ul>
+            	<li><a href=""><i></i>PLUS会员</a></li>
+                <li><a href=""><i></i>秒杀</a></li>
+                <li><a href=""><i></i>闪购</a></li>
+                <li><a href=""><i></i>海囤全球</a></li>
+                <li><a href=""><i></i>拍卖</a></li>
+                <li><a href=""><i></i>solarcat</a></li>
+                <li><a href=""><i></i>鸣谢</a></li>
+                <li><a href=""><i></i>赞助</a></li>
+            </ul>
+        </nav>
+        <!-- 限时抢购部分 -->
+        <div class="gBox flash">
+            <div class="item_tit">
+                <h5>限时抢购</h5>
+                <div class="time_item">
+                    <span id="day_show">0天</span>
+                    <strong id="hour_show">0时</strong>
+                    <strong id="minute_show">0分</strong>
+                    <strong id="second_show">0秒</strong>
+                </div>
+                <a href=""><i>></i></a>
+            </div>
+            <div class="flash_sale">
+                <ul>
+                    <li><a href=""><img src="images/cart-1.jpg"></a>商品名称</a></li>
+                    <li><a href=""><img src="images/cart-2.jpg"></a>商品名称</a></li>
+                    <li><a href=""><img src="images/cart-1.jpg"></a>商品名称</a></li>
+                    <li><a href=""><img src="images/cart-2.jpg"></a>商品名称</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 全网低价部分 -->
+        <div class="gBox item">
+            <div class="item_tit">
+                <h5>全网最低价</h5>
+                <a href=""><i>></i></a>
+            </div>
+            
+            <div class="yifu">
+                <a href="" class="big l t"><img src="images/banner_static_top3.jpg" alt=""></a>
+                <a href="" class="small r t"><img src="images/banner_static_top2.jpg" alt=""></a>
+                <a href="" class="small r b"><img src="images/banner_static_top1.jpg" alt=""></a>
+            </div>
+            
+        </div>
+        <!--  -->
+        <div class="gBox item">
+            <div class="item_tit">
+                <h5>手机数码</h5>
+                <a href=""><i>></i></a>
+            </div>
+            <div class="summer">
+                <div class="goods left l t">
+                    <div>
+                        <a href="" class="big "><img src="images/product-details-img2.jpg" alt=""></a>
+                    </div>
+                    <div>
+                        <span class="goodsname">商品名称</span>
+                        <span class="price">价格</span>
+                    </div>
+                </div>
+                <div class="goods right r b">
+                    <div>
+                        <a href="" class="big"><img src="images/product-details-img1.jpg" alt=""></a>
+                    </div>
+                    <div>
+                        <span class="goodsname">商品名称</span>
+                        <span class="price">价格</span>
+                    </div>
+                </div>
+                <div class="goods left l b">
+                    <div>
+                        <a href="" class="big "><img src="images/product-details-img3.jpg" alt=""></a>
+                    </div>
+                    <div>
+                        <span class="goodsname">商品名称</span>
+                        <span class="price">价格</span>
+                    </div>
+                </div>
+                <div class="goods right r t">
+                    <div>
+                        <a href="" class="big "><img src="images/product-details-img4.jpg" alt=""></a>
+                    </div>
+                    <div>
+                        <span class="goodsname">商品名称</span>
+                        <span class="price">价格</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+    // 倒计时总秒数
+    var intDiff = parseInt(500000);
+
+    function timer(intDiff) {
+        window.setInterval(function() {
+            var day = 0,
+                hour = 0,
+                minute = 0,
+                second = 0;
+            if (intDiff > 0) {
+                day = Math.floor(intDiff / (60 * 60 * 24));
+                hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
+                minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
+                second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
+            }
+            if (minute <= 9) minute = "0" + minute;
+            if (second <= 9) second = "0" + second;
+            $('#day_show').html(day + "天");
+            $('#hour_show').html('<s id="h"></s>' + hour + '时');
+            $('#minute_show').html("<s></s>" + minute + '分');
+            $("#second_show").html('<s></s>' + second + '秒');
+            intDiff--;
+        }, 1000);
+    }
+
+    $(function() {
+        timer(34566);
+    });
+    </script>
+    <!-- 轮播图js -->
+    <script src="js/base.js"></script>
+    <script src="js/slideshow.js"></script>
+</body>
+
+</html>
