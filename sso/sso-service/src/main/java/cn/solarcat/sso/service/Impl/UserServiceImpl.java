@@ -17,6 +17,7 @@ import com.alibaba.fastjson.JSONObject;
 import cn.solarcat.aop.Log;
 import cn.solarcat.common.pojo.ACTION;
 import cn.solarcat.common.pojo.LEVEL;
+import cn.solarcat.common.util.Md5Utils;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.mapper.TbUserMapper;
 import cn.solarcat.pojo.TbUser;
@@ -98,7 +99,8 @@ public class UserServiceImpl implements UserService {
 		}
 		TbUser user = list.get(0);
 		// 校验密码
-		if (!user.getPassword().equals(DigestUtils.md5DigestAsHex(password.getBytes()))) {
+		String md5Pass = Md5Utils.encode(password);
+		if (!user.getPassword().equals(md5Pass)) {
 			return SolarCatResult.build(400, "用户名或密码错误");
 		}
 		// 2、登录成功后生成token。Token相当于原来的jsessionid，字符串，可以使用uuid。

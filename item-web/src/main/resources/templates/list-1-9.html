@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<!-- Site title -->
+<title>帮助中心-solarcat</title>
+<!-- Favicon -->
+<link rel="shortcut icon" href="/images/solar.ico" type="image/x-icon" />
+<!-- Bootstrap CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font-Awesome CSS -->
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<!-- helper class css -->
+<link href="/css/helper.min.css" rel="stylesheet">
+<!-- Main Style CSS -->
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<!-- header area start -->
+	<div th:insert="~{help-header :: help-header}"></div>
+	<!-- header area end -->
+
+	<!-- page wrapper start -->
+	<div class="page-main-wrapper">
+		<div class="container">
+			<div class="row">
+				<!-- sidebar start -->
+				<div class="col-lg-3">
+					<div th:insert="~{wrapper :: wrapper}"></div>
+				</div>
+				<div class="col-lg-9">
+					<!-- breadcrumb area start -->
+					<div class="breadcrumb-area">
+						<div class="container">
+							<div class="row">
+								<div class="col-12">
+									<div class="breadcrumb-wrap">
+										<nav aria-label="breadcrumb">
+											<ul class="breadcrumb">
+												<li class="breadcrumb-item"><a href="index">帮助中心</a></li>
+												<li class="breadcrumb-item active" aria-current="page"><a href="list-1">购物指南</a></li>
+											</ul>
+										</nav>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- breadcrumb area end -->
+
+					<!-- product details reviews start -->
+					<div class="product-details-reviews mt-34">
+						<div class="row">
+							<div class="col-lg-12">
+								<div class="contxt">
+									<div class="help-tit1 flk06">违规行为规则</div>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>消费者通过京东账号操作的各种行为应符合法律法规规定、平台规则规定及注册协议约定，当出现（包含但不限于）以下行为时，视为消费者自愿同意接受京东或商家进行权益降级，强制风险验证、扣除京豆、冻结或关闭京东账号、取消订单、暂停或停止提供服务等操作，且同意京东或商家不进行任何赔偿或补偿。如给京东或相关方造成损失，消费者愿意承担相应责任：</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>一、违规行为包含但不限于以下行为：</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>1、&nbsp; 注册资料内容含虚假信息；</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>2、&nbsp; 虚假交易、虚假好评,发布无根据的恶意评价；</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>3、&nbsp; 购买正品商品，退货时退回非京东平台对应订单中销售的商品、以次充好、以假乱真等行为；</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>4、&nbsp; 无故、无正常理由拒收签收订单货物的行为；</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>5、&nbsp; 滥用购买商品或服务、评价、申请退款、申请售后服务、发起投诉或索赔、滥用京东所提供或赋予的工具等权利，损害他人合法权益或妨害平台运营秩序的行为，如：利用他人的行为瑕疵，以发起投诉、给予恶意差评等手段威胁他人，索取不当利益；</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>6、&nbsp; 符合违规订单处理规则情形的行为；（具体可参见：</span><a href="https://help.jd.com/user/issue/399-1183.html" target="_blank" title="1" style='text-decoration: underline; font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>违规订单处理规则</span></a><span
+										style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>）</span></p>
+									<p><span style='font-family: 微软雅黑, Microsoft YaHei; font-size: 14px;'>7、&nbsp; 经京东判断，消费者订购行为不符合公平原则或诚实信用原则的情形。</span></p>
+									<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;2017-12-15</p>
+								</div>
+							</div>
+
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+
+	<div></div>
+
+
+	<div></div>
+	<div></div>
+	<!-- product details reviews end -->
+	<div></div>
+	<div></div>
+	<div></div>
+	<div></div>
+	<!-- header area end -->
+
+	<!-- footer area start -->
+	<div th:insert="~{footer :: footer}"></div>
+	<!-- footer area end -->
+
+	<!-- Scroll to top start -->
+	<div class="scroll-top not-visible">
+		<i class="fa fa-angle-up"></i>
+	</div>
+	<!-- Scroll to Top End -->
+
+	<!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
+	<script src="/js/modernizr-3.6.0.min.js" type="text/javascript"></script>
+	<!--All jQuery, Third Party Plugins Activation (main.js) Files-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" type="text/javascript"></script>
+	<!-- Bootstrap Min Js -->
+	<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- Plugins Js-->
+	<script src="/js/plugins.js" type="text/javascript"></script>
+	<!-- Active Js -->
+	<script src="/js/main.js" type="text/javascript"></script>
+	<script src="/js/solar_token.js" type="text/javascript"></script>
+	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+</body>
+</html>

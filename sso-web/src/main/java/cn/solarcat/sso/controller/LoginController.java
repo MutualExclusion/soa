@@ -23,11 +23,7 @@ public class LoginController {
 
 	@RequestMapping("/login")
 	public String showLogin(HttpServletRequest request) {
-		if (JudgeFunction.JudgeIsMoblie(request)) {
-			return "login-phone";
-		} else {
-			return "login";
-		}
+		return "login";
 	}
 
 	@RequestMapping(value = "/user/login", method = RequestMethod.POST)

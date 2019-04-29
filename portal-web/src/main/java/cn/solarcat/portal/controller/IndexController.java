@@ -27,11 +27,6 @@ public class IndexController {
 		List<TbContent> ad2List = contentService.getContentListByCid(CONTENT_SHANGXIN_ID);
 		model.addAttribute("items", ad1List);
 		model.addAttribute("pros", ad2List);
-		if (JudgeFunction.JudgeIsMoblie(request)) {
-			return "phone";
-		} else {
-			return "team";
-		}
-
+		return "team";
 	}
 }

@@ -1,11 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
 
-<head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="meta description">
+<html xmlns:th="http://www.thymeleaf.org" data-th-fragment="header">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Site title -->
 <title>solarcat网上商城</title>
@@ -171,8 +167,8 @@
 									<div class="product-item fix mb-30">
 										<div class="product-thumb">
 											<a href="product-details.html">
-												<a th:href="'http://item.solarcat.cn/item/'+${item.id}">
-													<img th:src="${item.images[0]}" class="img-pri" src="" alt="">
+												<a th:href="'http://item.solarcat.cn/item/'+${item.id}+'.html'">
+													<img th:src="${item.images[0]}" class="img-pri" src="" alt="" />
 												</a>
 											</a>
 											<div class="product-label">
@@ -360,7 +356,6 @@
 		<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
 		<script src="/js/solar_token.js"></script>
 		<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
-	</div>
 </body>
 
 </html>

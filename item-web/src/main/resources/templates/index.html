@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" xmlns:th="http://www.thymeleaf.org">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+<!-- Site title -->
+<title>帮助中心-solarcat</title>
+<!-- Favicon -->
+<link rel="shortcut icon" href="/images/solar.ico" type="image/x-icon" />
+<!-- Bootstrap CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font-Awesome CSS -->
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<!-- helper class css -->
+<link href="/css/helper.min.css" rel="stylesheet">
+<!-- Main Style CSS -->
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<!-- header area start -->
+    <div th:insert="~{help-header :: help-header}"></div>
+    <!-- header area end -->
+
+	<!-- page wrapper start -->
+	<div class="page-main-wrapper">
+		<div class="container">
+			<div class="row">
+				<!-- sidebar start -->
+				<div class="col-lg-3">
+					<div th:insert="~{wrapper :: wrapper}"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- header area end -->
+
+	<!-- footer area start -->
+	<div th:insert="~{footer :: footer}"></div>
+	<!-- footer area end -->
+
+	<!-- Scroll to top start -->
+	<div class="scroll-top not-visible">
+		<i class="fa fa-angle-up"></i>
+	</div>
+	<!-- Scroll to Top End -->
+
+	<!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
+	<script src="/js/modernizr-3.6.0.min.js" type="text/javascript"></script>
+	<!--All jQuery, Third Party Plugins Activation (main.js) Files-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" type="text/javascript"></script>
+	<!-- Bootstrap Min Js -->
+	<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- Plugins Js-->
+	<script src="/js/plugins.js" type="text/javascript"></script>
+	<!-- Active Js -->
+	<script src="/js/main.js" type="text/javascript"></script>
+	<script src="/js/solar_token.js" type="text/javascript"></script>
+	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+
+</body>
+</html>

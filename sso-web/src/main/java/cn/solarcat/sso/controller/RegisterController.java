@@ -22,11 +22,7 @@ public class RegisterController {
 
 	@RequestMapping("/register")
 	public String showRegister(HttpServletRequest request) {
-		if (JudgeFunction.JudgeIsMoblie(request)) {
-			return "register-phone";
-		} else {
-			return "register";
-		}
+		return "register";
 	}
 
 	@RequestMapping("/user/check/{param}/{type}")

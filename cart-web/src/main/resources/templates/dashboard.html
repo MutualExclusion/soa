@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<!-- Site title -->
+<title>欢迎光临solarcat</title>
+<!-- Favicon -->
+<link rel="shortcut icon" href="/images/solar.ico" type="image/x-icon" />
+<!-- Bootstrap CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font-Awesome CSS -->
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<!-- helper class css -->
+<link href="/css/helper.min.css" rel="stylesheet">
+<!-- Plugins CSS -->
+<link href="/css/plugins.css" rel="stylesheet">
+<!-- Main Style CSS -->
+<link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<!-- header area start -->
+		<div th:insert="~{header :: header}"></div>
+		<!-- header area end -->
+		
+		<!-- breadcrumb area start -->
+		<div class="breadcrumb-area">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="breadcrumb-wrap">
+							<nav aria-label="breadcrumb">
+								<ul class="breadcrumb">
+									<li class="breadcrumb-item"><a href="index.html">首页</a></li>
+									<li class="breadcrumb-item active" aria-current="page">我的账户信息</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- breadcrumb area end -->
+		<!-- my account wrapper start -->
+		<div class="my-account-wrapper">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<!-- My Account Page Start -->
+						<div class="myaccount-page-wrapper">
+							<!-- My Account Tab Menu Start -->
+							<div class="row">
+								<div class="col-lg-3 col-md-4">
+									<div class="myaccount-tab-menu nav" role="tablist">
+										<a href="http://localhost:8087/dashboad" class="active" data-toggle="tab"><i class="fa fa-dashboard"></i> 帐户信息中心</a> 
+										<a href="http://localhost:8087/orders" data-toggle="tab"><i class="fa fa-cart-arrow-down"></i> 我的订单</a> 
+										<a href="http://localhost:8087/download" data-toggle="tab"><i class="fa fa-cloud-download"></i> 订单发票</a> 
+										<a href="http://localhost:8087/payment" data-toggle="tab"><i class="fa fa-credit-card"></i> 我的钱包</a> 
+										<a href="http://localhost:8087/address-edit" data-toggle="tab"><i class="fa fa-map-marker"></i> 我的地址</a> 
+										<a href="http://localhost:8087/account-info" data-toggle="tab"><i class="fa fa-user"></i> 个人信息</a> 
+									</div>
+								</div>
+								<!-- My Account Tab Menu End -->
+								<!-- My Account Tab Content Start -->
+								<div class="col-lg-9 col-md-8">
+									<div class="tab-content" id="myaccountContent">
+										<!-- Single Tab Content Start -->
+										<div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+											<div class="myaccount-content">
+												<h3>帐户信息中心</h3>
+												<div class="welcome">
+													<p>你好, <strong>Alex Tuntuni</strong> (如果不是<strong>Tuntuni !</strong><a href="login-register.html" class="logout"> 请退出</a>)
+													</p>
+												</div>
+												<p class="mb-0">来自您的帐户信息中心。您可以轻松查看和查看最近的订单，管理您的送货和帐单地址，以及修改密码和帐户详细信息。</p>
+											</div>
+										</div>
+										<!-- Single Tab Content End -->
+									</div>
+								</div>
+								<!-- My Account Tab Content End -->
+							</div>
+						</div>
+						<!-- My Account Page End -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- my account wrapper end -->
+		<!-- footer area start -->
+		<div th:insert="~{footer :: footer}"></div>
+		<!-- footer area end -->
+	</div>
+	<!-- Scroll to top start -->
+	<div class="scroll-top not-visible">
+		<i class="fa fa-angle-up"></i>
+	</div>
+	<!-- Scroll to Top End -->
+	<!-- Jquery Min Js -->
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js" type="text/javascript"></script>
+	<!-- Popper Min Js -->
+	<script src="https://cdn.bootcss.com/popper.js/1.14.7/esm/popper.min.js" type="text/javascript"></script>
+	<!-- Bootstrap Min Js -->
+	<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js" type="text/javascript"></script>
+	<!-- Plugins Js-->
+	<script src="/js/plugins.js" type="text/javascript"></script>
+	<!-- Active Js -->
+	<script src="/js/main.js" type="text/javascript"></script>
+	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+	<script src="layer/layer.js" th:src="@{/layer/layer.js}" type="text/javascript"></script>
+	<script src="/js/solar_token.js" type="text/javascript"></script>
+	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
+</body>
+</html>

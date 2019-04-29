@@ -23,15 +23,16 @@ public class SearchController {
 	public String searchItemList(HttpServletRequest request, String keyword,
 			@RequestParam(defaultValue = "1") Integer page, Model model) throws Exception {
 		SearchResult searchResult = searchService.search(keyword, page, SEARCH_RESULT_ROWS);
-		model.addAttribute("query", keyword);
-		model.addAttribute("totalPages", searchResult.getTotalPages());
-		model.addAttribute("page", page);
-		model.addAttribute("recordCount", searchResult.getRecordCount());
-		model.addAttribute("itemList", searchResult.getItemList());
-		if (JudgeFunction.JudgeIsMoblie(request)) {
-			return "team";
-		} else {
+		if(searchResult.getItemList().isEmpty()) {
+			return "404";
+		}else {
+			model.addAttribute("query", keyword);
+			model.addAttribute("totalPages", searchResult.getTotalPages());
+			model.addAttribute("page", page);
+			model.addAttribute("recordCount", searchResult.getRecordCount());
+			model.addAttribute("itemList", searchResult.getItemList());
 			return "search";
 		}
+		
 	}
 }
