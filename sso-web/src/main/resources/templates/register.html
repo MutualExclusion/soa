@@ -4,20 +4,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>快速注册-solarcat</title>
+<title>欢迎登陆-solarcat</title>
 <link rel="icon" href="images/solar.ico">
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="/css/bootstrap.min.css">
-<!-- Font-Awesome CSS -->
-<link href="css/font-awesome.min.css" rel="stylesheet">
+<link href="css/bootstrap.min.css" rel="stylesheet">
 <!-- helper class css -->
 <link href="css/helper.min.css" rel="stylesheet">
-<!-- Main Style CSS -->
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<!-- helper class css -->
 <link href="css/index.css" rel="stylesheet">
-</head>
-
 <body>
-
 	<div class="wrapper box-layout">
 
 		<!-- breadcrumb area start -->
@@ -50,22 +46,22 @@
 						<div class="col-lg-6">
 							<div class="login-reg-form-wrap mt-md-34 mt-sm-34">
 								<h2>注册</h2>
-								<form id="regForm_mod" >
+								<div id="regForm_mod" >
 									<div class="single-input-item">
-										<input id="regName" name="username" type="text" placeholder="请输入您的账号名">
+										<input id="regName" name="username" type="text" placeholder="请输入您的账号名" required="">
 									</div>
 									<div class="single-input-item">
-										<input id="phone" name="phone" type="number" placeholder="请输入您的手机号">
+										<input id="phone" name="phone" type="text" placeholder="请输入您的手机号" required="">
 									</div>
 									<div class="row">
 										<div class="col-lg-6">
 											<div class="single-input-item">
-												<input id="pwd" name="password" type="password" placeholder="请输入您的密码">
+												<input id="pwd" name="password" type="password" placeholder="请输入您的密码" required="">
 											</div>
 										</div>
 										<div class="col-lg-6">
 											<div class="single-input-item">
-												<input id="pwdRepeat" name="password" type="password" placeholder="请再次输入您的密码">
+												<input id="pwdRepeat" name="password" type="password" placeholder="请再次输入您的密码" required="">
 											</div>
 										</div>
 									</div>
@@ -79,9 +75,9 @@
 										</div>
 									</div>
 									<div class="single-input-item">
-										<div class="sqr-btn" id="register_sub" onclick="REGISTER.reg()">注册</div>
+										<div class="sqr-btn" id="register_sub">注册</div>
 									</div>
-								</form>
+								</div>
 							</div>
 						</div>
 						<!-- Register Content End -->
@@ -91,16 +87,18 @@
 		</div>
 		<!-- login register wrapper end -->
 
+		<!-- brand area start -->
+
+		<!-- brand area end -->
 		<!-- footer area start -->
 		<div th:insert="~{footer :: footer}"></div>
 		<!-- footer area end -->
 	</div>
-
-	<!-- Jquery Min Js -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous" type="text/javascript"></script>
-
 	
-	<script src="layer/layer.js" th:src="@{/layer/layer.js}"type="text/javascript"></script>
+	<!--All jQuery, Third Party Plugins Activation (main.js) Files-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+	<script src="/layer/layer.js" th:src="@{/layer/layer.js}"type="text/javascript"></script>
 	<!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
 	<script type="text/javascript">
 	var REGISTER={
@@ -151,7 +149,7 @@
 
 			},
 			doSubmit:function() {
-				$.post("/user/register",$("#regForm_mod").serialize(), function(data){
+				$.post("/user/register",{username:$("#regName").val(),phone:$("#phone").val(),password:$("#pwd").val()}, function(data){
 					if(data.status == 200){
 						layer.alert('用户注册成功，请登录！',{icon: 1}, function(){
 							REGISTER.login();
@@ -162,7 +160,7 @@
 				});
 			},
 			login:function() {
-				location.href = "http://sso.view.solarcat.cn/login";
+				location.href = "/login";
 				return false;
 			},
 			reg:function() {
@@ -171,6 +169,11 @@
 				}
 			}
 	};
+	$(function(){
+		$("#register_sub").click(function(){
+			REGISTER.reg();
+		});
+	});
 	</script>
 	
 

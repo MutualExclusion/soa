@@ -9,7 +9,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.util.DigestUtils;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSONObject;
@@ -17,7 +16,7 @@ import com.alibaba.fastjson.JSONObject;
 import cn.solarcat.aop.Log;
 import cn.solarcat.common.pojo.ACTION;
 import cn.solarcat.common.pojo.LEVEL;
-import cn.solarcat.common.util.Md5Utils;
+import cn.solarcat.common.util.MD5Utils;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.mapper.TbUserMapper;
 import cn.solarcat.pojo.TbUser;
@@ -81,7 +80,7 @@ public class UserServiceImpl implements UserService {
 		}
 		user.setCreated(new Date());
 		user.setUpdated(new Date());
-		String md5Pass = DigestUtils.md5DigestAsHex(user.getPassword().getBytes());
+		String md5Pass = MD5Utils.MD5EncodeUtf8(user.getPassword());
 		user.setPassword(md5Pass);
 		userMapper.insert(user);
 		return SolarCatResult.ok();
@@ -99,7 +98,7 @@ public class UserServiceImpl implements UserService {
 		}
 		TbUser user = list.get(0);
 		// 校验密码
-		String md5Pass = Md5Utils.encode(password);
+		String md5Pass = MD5Utils.MD5EncodeUtf8(password);
 		if (!user.getPassword().equals(md5Pass)) {
 			return SolarCatResult.build(400, "用户名或密码错误");
 		}
