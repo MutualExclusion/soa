@@ -1,5 +1,7 @@
 package cn.solarcat.search.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.stereotype.Controller;
@@ -9,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 
+import cn.solarcat.common.pojo.SearchItem;
 import cn.solarcat.common.pojo.SearchResult;
-import cn.solarcat.common.util.JudgeFunction;
 import cn.solarcat.search.service.SearchService;
 
 @Controller
@@ -23,9 +25,10 @@ public class SearchController {
 	public String searchItemList(HttpServletRequest request, String keyword,
 			@RequestParam(defaultValue = "1") Integer page, Model model) throws Exception {
 		SearchResult searchResult = searchService.search(keyword, page, SEARCH_RESULT_ROWS);
-		if(searchResult.getItemList().isEmpty()) {
+		List<SearchItem> itemList = searchResult.getItemList();
+		if (itemList.isEmpty()) {
 			return "404";
-		}else {
+		} else {
 			model.addAttribute("query", keyword);
 			model.addAttribute("totalPages", searchResult.getTotalPages());
 			model.addAttribute("page", page);
@@ -33,6 +36,6 @@ public class SearchController {
 			model.addAttribute("itemList", searchResult.getItemList());
 			return "search";
 		}
-		
+
 	}
 }
