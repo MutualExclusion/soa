@@ -11,7 +11,7 @@ var SOLAR = {
 			success : function(data){
 				if(data.status == 200){
 					var username = data.data.username;
-					var html = username + "，欢迎来到solarcat！<a href=\"http://sso.solarcat.cn/user/logout\" class=\"link-logout\">[退出]</a>";
+					var html = "<li>"+username + "，欢迎来到solarcat！<a href=\"http://sso.solarcat.cn/user/logout\" class=\"link-logout\">[退出]</a><li>";
 					$("#loginbar").html(html);
 				}
 			}
