@@ -1,16 +1,64 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org" data-th-fragment="header">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" data-th-fragment="header">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <body>
-	<header data-th-fragment="header">
+	<header>
 		<!-- header top start -->
 		<div class="header-top-area bg-gray text-center text-md-left">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8 col-md-5"></div>
-					<div class="col-lg-4 col-md-10">
-					<div class="header-middle-block">
+					<div class="col-lg-6 col-md-5"></div>
+					<div class="col-lg-6 col-md-7">
+						<div class="header-top-right float-md-right float-none">
+							<nav>
+								<ul>
+									<li id="loginbar" style="margin-right: 15px;">
+										<a href="http://sso.view.solarcat.cn/login">请登录</a>
+									</li>
+									<li>
+										<a href="http://sso.view.solarcat.cn/register">免费注册</a>
+									</li>
+									<li>
+										<a href="http://localhost:9005/cart/cart">购物车</a>
+									</li>
+									<li>
+										<div class="dropdown header-top-dropdown">
+											<a class="dropdown-toggle" id="myaccount" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												我的账户 <i class="fa fa-angle-down"></i>
+											</a>
+											<div class="dropdown-menu" aria-labelledby="myaccount">
+												<a class="dropdown-item" href="#">我的优选</a>
+												<a class="dropdown-item" href="#">我的订单</a>
+												<a class="dropdown-item" href="#">我的积分</a>
+												<a class="dropdown-item" href="#">我的收藏</a>
+											</div>
+										</div>
+									</li>
+									<li>
+										<a href="#">我的愿望清单</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- header top end -->
+
+		<!-- header middle start -->
+		<div class="header-middle-area pt-20 pb-20">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-3">
+					</div>
+					<!-- end logo area -->
+					<div class="col-lg-6">
+						<div class="header-middle-right">
+							<div class="header-middle-block">
 								<div class="header-middle-searchbox">
 									<form action="http://search.view.solarcat.cn/search" id="searchForm" name="query" method="GET">
 										<input type="text" class="text keyword ac_input" name="keyword" id="keyword" autocomplete="off" placeholder="搜索商品">
@@ -20,11 +68,13 @@
 									</form>
 								</div>
 							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<!-- header top end -->
+		<!-- header middle end -->
+		<div th:replace="~{mainmenu :: mainmenu}"></div>
 	</header>
 </body>
 </html>

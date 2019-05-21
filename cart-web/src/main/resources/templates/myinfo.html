@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+</head>
+<script type="text/html" id="welcome">
+        <div class="myaccount-content">
+		<h3>帐户信息中心</h3>
+		<div class="welcome">
+		<p>你好, <strong>{{ username }}</strong> 
+		(如果不是<strong>{{ username }} !</strong><a href="http://sso.view.solarcat.cn/login" class="logout"> 请重新登录。</a>)
+		</p>
+		</div>
+		<p class="mb-0">来自您的帐户信息中心。您可以轻松查看和查看最近的订单，管理您的送货和帐单地址，以及修改密码和帐户详细信息。</p>
+		</div>
+</script>

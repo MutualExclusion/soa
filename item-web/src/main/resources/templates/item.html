@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4" data-th-fragment="header">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
 	<!-- Site title -->
@@ -67,23 +65,6 @@
                                 <div class="col-lg-6">
                                     <div class="product-details-des mt-md-34 mt-sm-34">
                                         <p th:text="${item.title}"></p>
-                                        <div class="ratings">
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span class="good"><i class="fa fa-star"></i></span>
-                                            <span><i class="fa fa-star"></i></span>
-                                            <div class="pro-review">
-                                                <span>1 review(s)</span>
-                                            </div>
-                                        </div>
-                                        <div class="customer-rev">
-                                            <a href="#">(1 customer review)</a>
-                                        </div>
-                                        <div class="availability mt-10">
-                                            <h5>Availability:</h5>
-                                            <span>1 in stock</span>
-                                        </div>
                                         <div class="pricebox">
                                         	<span class="regular-price" th:text="'￥'+${item.price}"></span>
                                         </div>
@@ -92,7 +73,7 @@
                                                 <div class="pro-qty"><input type="text" value="1"></div>
                                             </div>
                                             <div class="action_link">
-                                                <a class="buy-btn" href="cart.solarcat.cn/cart/add/${item.id}">加入购物车<i class="fa fa-shopping-cart"></i></a>
+                                                <a class="buy-btn" id="buy-cart">加入购物车<i class="fa fa-shopping-cart"></i></a>
                                             </div>
                                         </div>
                                         <div class="useful-links mt-20">
@@ -223,14 +204,6 @@
                                 </div>
                             </div>
                             <!-- product tag end -->
-
-                            <!-- sidebar banner start -->
-                            <div class="sidebar-widget mb-22">
-                                <div class="img-container fix img-full mt-30">
-                                    <a href="#"><img src="/img/banner/banner_shop.jpg" alt=""></a>
-                                </div>
-                            </div>
-                            <!-- sidebar banner end -->
                         </div>
                     </div>
                     <!-- sidebar end -->
@@ -262,8 +235,30 @@
     <script src="/js/plugins.js"></script>
     <!-- Active Js -->
     <script src="/js/main.js"></script>
+    <script src="/layer/layer.js"></script>
     <script src="/js/solar_token.js"></script>
     <!-- Switcher JS [Please Remove this when Choose your Final Projct] -->
-    
+    <script th:inline="javascript">
+    var CART = {
+    	cart : function(){
+    		$.ajax({
+    			url : "http://localhost:9005/cart/add/[(${item.id})]",
+    			data : {num:1},
+    			dataType : "jsonp",
+    			type : "GET",
+    			success : function(data){
+    				if(data.status == 200){
+    					layer.alert("添加购物车成功！");
+    				}
+    			}
+    		});
+    	}
+    };
+    $(function() {
+		$("#buy-cart").click(function() {
+			CART.cart();
+		});
+	});
+    </script>
 </body>
 </html>

@@ -41,18 +41,6 @@
 	         	</ul>
          	</li>
          	<li>
-         		<span>订单管理</span>
-         		<ul>
-	         		<li data-options="attributes:{'url':'order-list'}">订单管理</li>
-	         	</ul>
-         	</li>
-         	<li>
-         		<span>权限管理</span>
-         		<ul>
-	         		<li data-options="attributes:{'url':'domain'}">权限管理</li>
-	         	</ul>
-         	</li>
-         	<li>
          		<span>索引库管理</span>
          		<ul>
 	         		<li data-options="attributes:{'url':'index-item'}">solr索引库维护</li>

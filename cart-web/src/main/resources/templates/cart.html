@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+<!-- Site title -->
+<title>欢迎光临solarcat</title>
+<!-- Favicon -->
+<link rel="shortcut icon" href="/images/solar.ico" type="image/x-icon" />
+<!-- Bootstrap CSS -->
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font-Awesome CSS -->
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<!-- helper class css -->
+<link href="/css/helper.min.css" rel="stylesheet">
+<!-- Main Style CSS -->
+<link href="/css/solar.css" rel="stylesheet">
+<!-- Main Style CSS -->
+<link href="/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="wrapper box-layout">
+
+		<!-- header area start -->
+		<div th:insert="~{header :: header}"></div>
+		<!-- header area end -->
+
+        <!-- breadcrumb area start -->
+        <div class="breadcrumb-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-wrap">
+                            <nav aria-label="breadcrumb">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">商城首页</a></li>
+                                    <li class="breadcrumb-item"><a href="shop-grid-left-sidebar.html">shop</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">cart</li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- breadcrumb area end -->
+
+        <!-- cart main wrapper start -->
+        <div class="cart-main-wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <!-- Cart Table Area -->
+                        <div class="cart-table table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th class="pro-thumbnail"></th>
+                                    <th class="pro-title">商品名称</th>
+                                    <th class="pro-price">价格</th>
+                                    <th class="pro-quantity">数量</th>
+                                    <th class="pro-subtotal">总计</th>
+                                    <th class="pro-remove"></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr th:each="item : ${cartList}">
+                                    <td class="pro-thumbnail" th:each="img,iterStat:${item.image}" th:class="${iterStat}?'first'">
+                                    	<a href="#">
+                                    		<img class="img-fluid" alt="Product" th:src="${img}"/>
+                                    	</a>
+                                    </td>
+                                    <td class="pro-title"><a href="#"><label th:text="${item.title}"></label></a></td>
+                                    <td class="pro-price"><span><label th:text="'￥'+${item.price}/100"></label></span></td>
+                                    <td class="pro-quantity"><label th:text="${item.num}"></label>
+                                    </td>
+                                    <td class="pro-subtotal"><span><label th:text="'￥'+${item.num}*${item.price}/100"></label></span></td>
+                                    <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+        
+                        <!-- Cart Update Option -->
+                        <div class="cart-update-option d-block d-md-flex justify-content-between">
+                            <div class="apply-coupon-wrapper">
+                                <button class="sqr-btn" id="choose">选择收货地址</button>
+                            </div>
+                            <div class="cart-update mt-sm-16">
+                                <a href="#" class="sqr-btn">购买</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- cart main wrapper end -->
+
+        <!-- footer area start -->
+        <div th:insert="~{footer :: footer}"></div>
+        <!-- footer area end -->
+
+    </div>
+
+    <!-- Scroll to top start -->
+    <div class="scroll-top not-visible">
+        <i class="fa fa-angle-up"></i>
+    </div>
+    <!-- Scroll to Top End -->
+
+
+    <!--All jQuery, Third Party Plugins & Activation (main.js) Files-->
+    <script src="/js/modernizr-3.6.0.min.js"></script>
+    <!-- Jquery Min Js -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap Min Js -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Plugins Js-->
+    <script src="/js/plugins.js"></script>
+    <script type="text/javascript">
+    	var CART={
+    		choose:function(){
+    			
+    		}
+    	};
+    	$(function(){
+    		$("#login_sub").click(function(){
+    			CART.login();
+    		});
+    	});
+    </script>
+</body>
+
+</html>

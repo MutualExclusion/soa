@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +19,7 @@ import com.alibaba.fastjson.JSONObject;
 
 import cn.solarcat.cart.service.CartService;
 import cn.solarcat.common.util.CookieUtils;
+import cn.solarcat.common.util.ReturnCode;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.pojo.TbItem;
 import cn.solarcat.pojo.TbUser;
@@ -48,8 +50,9 @@ public class CartController {
 	private CartService cartService;
 
 	@RequestMapping("/cart/add/{itemId}")
+	@ResponseBody
 	public String addCart(@PathVariable Long itemId, @RequestParam(defaultValue = "1") Integer num,
-			HttpServletRequest request, HttpServletResponse response) {
+			HttpServletRequest request, HttpServletResponse response, String callback) {
 		// 判断用户是否登录
 		TbUser user = (TbUser) request.getAttribute("user");
 		// 如果是登录状态，把购物车写入redis
@@ -57,7 +60,11 @@ public class CartController {
 			// 保存到服务端
 			cartService.addCart(user.getId(), itemId, num);
 			// 返回逻辑视图
-			return "cartSuccess";
+			if (StringUtils.isNotBlank(callback)) {
+				return callback + "(" + JSONObject.toJSONString(SolarCatResult.ok()) + ")";
+			} else {
+				return callback + "(" + JSONObject.toJSONString(SolarCatResult.build(ReturnCode.C512)) + ")";
+			}
 		}
 		// 如果未登录使用cookie
 		// 从cookie中取购物车列表
@@ -91,7 +98,12 @@ public class CartController {
 		// 写入cookie
 		CookieUtils.setCookie(request, response, "cart", JSONObject.toJSONString(cartList), COOKIE_CART_EXPIRE, true);
 		// 返回添加成功页面
-		return "cartSuccess";
+		if (StringUtils.isNotBlank(callback)) {
+			return callback + "(" + JSONObject.toJSONString(SolarCatResult.ok()) + ")";
+		} else {
+			return callback + "(" + JSONObject.toJSONString(SolarCatResult.build(ReturnCode.C512)) + ")";
+		}
+
 	}
 
 	/**
@@ -130,7 +142,7 @@ public class CartController {
 	 * @return
 	 */
 	@RequestMapping("/cart/cart")
-	public String showCatList(HttpServletRequest request, HttpServletResponse response) {
+	public String showCatList(HttpServletRequest request, HttpServletResponse response, Model model) {
 		// 从cookie中取购物车列表
 		List<TbItem> cartList = getCartListFromCookie(request);
 		// 判断用户是否为登录状态
@@ -147,7 +159,7 @@ public class CartController {
 
 		}
 		// 把列表传递给页面
-		request.setAttribute("cartList", cartList);
+		model.addAttribute("cartList", cartList);
 		// 返回逻辑视图
 		return "cart";
 	}

@@ -3564,24 +3564,7 @@ only screen and (min-width: 768px) and (max-width: 991px) {
 }
 
 /*--------- pricing filter slider end ---------*/
-/*---------- product tag start -----------*/
-.product-tag a {
-    color: #444444;
-    font-size: 13px;
-    padding: 4px 10px;
-    display: inline-block;
-    border: 1px solid #e5e5e5;
-    text-transform: capitalize;
-    margin-bottom: 5px;
-}
 
-.product-tag a:hover {
-    color: #ffffff;
-    background-color: #d8373e;
-    border-color: #d8373e;
-}
-
-/*---------- product tag end -----------*/
 /*------- testimonial item start -------*/
 .testimonial-item .testimonial-thumb {
     max-width: 84px;

@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.dubbo.config.annotation.Reference;
 
 import cn.solarcat.common.configuration.ItemConfiguration;
-import cn.solarcat.common.util.JudgeFunction;
 import cn.solarcat.common.util.SolarCatResult;
 import cn.solarcat.item.pojo.Item;
 import cn.solarcat.item.service.HtmlService;
@@ -35,12 +34,7 @@ public class ItemController {
 		TbItemDesc tbItemDesc = itemService.getTbItemDescById(itemId);
 		model.addAttribute("item", item);
 		model.addAttribute("itemDesc", tbItemDesc);
-		if (JudgeFunction.JudgeIsMoblie(request)) {
-			return "item-phone";
-		} else {
-			return "item";
-		}
-
+		return "item";
 	}
 
 	/**

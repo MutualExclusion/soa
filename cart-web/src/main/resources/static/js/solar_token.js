@@ -5,7 +5,7 @@ var SOLAR = {
 			return ;
 		}
 		$.ajax({
-			url : "http://sso.view.solarcat.cn/user/token/" + _ticket,
+			url : "http://localhost:8087/user/token/" + _ticket,
 			dataType : "jsonp",
 			type : "GET",
 			success : function(data){

@@ -20,7 +20,15 @@ public enum ReturnCode {
 	/**
 	 * 数据库删除失败
 	 */
-	C410(410, "静态页面生成失败");
+	C410(410, "静态页面生成失败"),
+	/**
+	 * 数据库删除失败
+	 */
+	C411(411, "授权失败，请登录后重试！"),
+	/**
+	 * 数据库删除失败
+	 */
+	C512(512, "添加购物车失败，请联系客服处理！");
 	private final int status;
 	private final String message;
 
